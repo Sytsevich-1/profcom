@@ -6,10 +6,3 @@
     {
     }
 }
-
-namespace Профсоюзная_база.DataSet1TableAdapters {
-    
-    
-    public partial class ГендерTableAdapter {
-    }
-}
