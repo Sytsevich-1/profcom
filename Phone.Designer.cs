@@ -33,8 +33,11 @@ namespace Профсоюзная_база
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Phone));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataSet11 = new Профсоюзная_база.DataSet1();
-            this.phoneBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.кодномераDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодЧПDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.номертелефонаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.телефоныBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new Профсоюзная_база.DataSet1();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -48,19 +51,13 @@ namespace Профсоюзная_база
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.dataSet1 = new Профсоюзная_база.DataSet1();
-            this.phoneTableAdapter = new Профсоюзная_база.DataSet1TableAdapters.PhoneTableAdapter();
-            this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.отчествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.номертелефонаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.телефоныTableAdapter = new Профсоюзная_база.DataSet1TableAdapters.ТелефоныTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.телефоныBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -70,7 +67,7 @@ namespace Профсоюзная_база
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(566, 511);
+            this.panel1.Size = new System.Drawing.Size(891, 511);
             this.panel1.TabIndex = 0;
             // 
             // dataGridView1
@@ -81,30 +78,48 @@ namespace Профсоюзная_база
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.фамилияDataGridViewTextBoxColumn,
-            this.имяDataGridViewTextBoxColumn,
-            this.отчествоDataGridViewTextBoxColumn,
+            this.кодномераDataGridViewTextBoxColumn,
+            this.кодЧПDataGridViewTextBoxColumn,
             this.номертелефонаDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.phoneBindingSource;
+            this.dataGridView1.DataSource = this.телефоныBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(0, 28);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(566, 483);
+            this.dataGridView1.Size = new System.Drawing.Size(891, 483);
             this.dataGridView1.TabIndex = 1;
             // 
-            // dataSet11
+            // кодномераDataGridViewTextBoxColumn
             // 
-            this.dataSet11.DataSetName = "DataSet1";
-            this.dataSet11.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.кодномераDataGridViewTextBoxColumn.DataPropertyName = "Код_номера";
+            this.кодномераDataGridViewTextBoxColumn.HeaderText = "Код_номера";
+            this.кодномераDataGridViewTextBoxColumn.Name = "кодномераDataGridViewTextBoxColumn";
+            this.кодномераDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // phoneBindingSource
+            // кодЧПDataGridViewTextBoxColumn
             // 
-            this.phoneBindingSource.DataMember = "Phone";
-            this.phoneBindingSource.DataSource = this.dataSet11;
+            this.кодЧПDataGridViewTextBoxColumn.DataPropertyName = "Код_ЧП";
+            this.кодЧПDataGridViewTextBoxColumn.HeaderText = "Код_ЧП";
+            this.кодЧПDataGridViewTextBoxColumn.Name = "кодЧПDataGridViewTextBoxColumn";
+            // 
+            // номертелефонаDataGridViewTextBoxColumn
+            // 
+            this.номертелефонаDataGridViewTextBoxColumn.DataPropertyName = "Номер_телефона";
+            this.номертелефонаDataGridViewTextBoxColumn.HeaderText = "Номер_телефона";
+            this.номертелефонаDataGridViewTextBoxColumn.Name = "номертелефонаDataGridViewTextBoxColumn";
+            // 
+            // телефоныBindingSource
+            // 
+            this.телефоныBindingSource.DataMember = "Телефоны";
+            this.телефоныBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bindingNavigator1.BindingSource = this.phoneBindingSource;
+            this.bindingNavigator1.BindingSource = this.телефоныBindingSource;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
             this.bindingNavigator1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
@@ -128,7 +143,7 @@ namespace Профсоюзная_база
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(566, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(891, 25);
             this.bindingNavigator1.TabIndex = 0;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -226,52 +241,17 @@ namespace Профсоюзная_база
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // dataSet1
+            // телефоныTableAdapter
             // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // phoneTableAdapter
-            // 
-            this.phoneTableAdapter.ClearBeforeFill = true;
-            // 
-            // фамилияDataGridViewTextBoxColumn
-            // 
-            this.фамилияDataGridViewTextBoxColumn.DataPropertyName = "Фамилия";
-            this.фамилияDataGridViewTextBoxColumn.HeaderText = "Фамилия";
-            this.фамилияDataGridViewTextBoxColumn.Name = "фамилияDataGridViewTextBoxColumn";
-            this.фамилияDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.фамилияDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // имяDataGridViewTextBoxColumn
-            // 
-            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
-            this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
-            this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
-            this.имяDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.имяDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // отчествоDataGridViewTextBoxColumn
-            // 
-            this.отчествоDataGridViewTextBoxColumn.DataPropertyName = "Отчество";
-            this.отчествоDataGridViewTextBoxColumn.HeaderText = "Отчество";
-            this.отчествоDataGridViewTextBoxColumn.Name = "отчествоDataGridViewTextBoxColumn";
-            this.отчествоDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.отчествоDataGridViewTextBoxColumn.Width = 120;
-            // 
-            // номертелефонаDataGridViewTextBoxColumn
-            // 
-            this.номертелефонаDataGridViewTextBoxColumn.DataPropertyName = "Номер_телефона";
-            this.номертелефонаDataGridViewTextBoxColumn.HeaderText = "Номер_телефона";
-            this.номертелефонаDataGridViewTextBoxColumn.Name = "номертелефонаDataGridViewTextBoxColumn";
-            this.номертелефонаDataGridViewTextBoxColumn.Width = 150;
+            this.телефоныTableAdapter.ClearBeforeFill = true;
             // 
             // Phone
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(566, 511);
+            this.ClientSize = new System.Drawing.Size(891, 511);
             this.Controls.Add(this.panel1);
             this.Name = "Phone";
             this.Text = "Номера телефонов";
@@ -279,12 +259,11 @@ namespace Профсоюзная_база
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.phoneBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.телефоныBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -292,8 +271,6 @@ namespace Профсоюзная_база
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -305,14 +282,14 @@ namespace Профсоюзная_база
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private DataSet1 dataSet1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private DataSet1 dataSet11;
-        private System.Windows.Forms.BindingSource phoneBindingSource;
-        private DataSet1TableAdapters.PhoneTableAdapter phoneTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn отчествоDataGridViewTextBoxColumn;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.BindingNavigator bindingNavigator1;
+        public DataSet1 dataSet1;
+        private System.Windows.Forms.BindingSource телефоныBindingSource;
+        private DataSet1TableAdapters.ТелефоныTableAdapter телефоныTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодномераDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодЧПDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn номертелефонаDataGridViewTextBoxColumn;
     }
 }

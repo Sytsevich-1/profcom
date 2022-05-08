@@ -48,47 +48,43 @@ namespace Профсоюзная_база {
         
         private Протоколы_заседанийDataTable tableПротоколы_заседаний;
         
-        private ТелефоныDataTable tableТелефоны;
-        
         private Типы_заявленийDataTable tableТипы_заявлений;
         
         private Типы_пользователяDataTable tableТипы_пользователя;
         
-        private AllPersonDataTable tableAllPerson;
+        private ТелефоныDataTable tableТелефоны;
         
-        private PhoneDataTable tablePhone;
+        private PersonDataTable tablePerson;
         
-        private global::System.Data.DataRelation relationFK_Члены_профсоюза_Гендер1;
+        private global::System.Data.DataRelation relationFK_Person_Члены_профсоюза;
+        
+        private global::System.Data.DataRelation relationТелефоны_Члены_профсоюза;
         
         private global::System.Data.DataRelation relationFK_Члены_профсоюза_Должности1;
         
-        private global::System.Data.DataRelation relationFK_Дети_Гендер;
+        private global::System.Data.DataRelation relationFK_Дети_родители_Члены_профсоюза;
         
         private global::System.Data.DataRelation relationFK_Дети_родители_Дети;
         
-        private global::System.Data.DataRelation relationFK_Дети_родители_Члены_профсоюза;
-        
-        private global::System.Data.DataRelation relationFK_Заявления_Материальная_выплата;
+        private global::System.Data.DataRelation relationFK_Заявления_Типы_заявлений;
         
         private global::System.Data.DataRelation relationFK_Заявления_Протоколы_заседаний;
         
-        private global::System.Data.DataRelation relationFK_Заявления_Типы_заявлений;
-        
-        private global::System.Data.DataRelation relationFK_Заявления_Члены_профсоюза;
+        private global::System.Data.DataRelation relationFK_Заявления_Материальная_выплата;
         
         private global::System.Data.DataRelation relationFK_Материальная_выплата_Основания_МП;
         
-        private global::System.Data.DataRelation relationFK_ОО_ЧП_Общественные_организации;
-        
         private global::System.Data.DataRelation relationFK_ОО_ЧП_Члены_профсоюза;
+        
+        private global::System.Data.DataRelation relationFK_ОО_ЧП_Общественные_организации;
         
         private global::System.Data.DataRelation relationFK_Пользователи_Типы_пользователя;
         
-        private global::System.Data.DataRelation relationFK_Телефоны_Члены_профсоюза;
+        private global::System.Data.DataRelation relationFK_Дети_Гендер;
         
-        private global::System.Data.DataRelation relationFK_Члены_профсоюза_Гендер11;
+        private global::System.Data.DataRelation relationFK_Заявления_Члены_профсоюза;
         
-        private global::System.Data.DataRelation relationFK_Дети_Гендер1;
+        private global::System.Data.DataRelation relationFK_Члены_профсоюза_Гендер1;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -154,20 +150,17 @@ namespace Профсоюзная_база {
                 if ((ds.Tables["Протоколы_заседаний"] != null)) {
                     base.Tables.Add(new Протоколы_заседанийDataTable(ds.Tables["Протоколы_заседаний"]));
                 }
-                if ((ds.Tables["Телефоны"] != null)) {
-                    base.Tables.Add(new ТелефоныDataTable(ds.Tables["Телефоны"]));
-                }
                 if ((ds.Tables["Типы_заявлений"] != null)) {
                     base.Tables.Add(new Типы_заявленийDataTable(ds.Tables["Типы_заявлений"]));
                 }
                 if ((ds.Tables["Типы_пользователя"] != null)) {
                     base.Tables.Add(new Типы_пользователяDataTable(ds.Tables["Типы_пользователя"]));
                 }
-                if ((ds.Tables["AllPerson"] != null)) {
-                    base.Tables.Add(new AllPersonDataTable(ds.Tables["AllPerson"]));
+                if ((ds.Tables["Телефоны"] != null)) {
+                    base.Tables.Add(new ТелефоныDataTable(ds.Tables["Телефоны"]));
                 }
-                if ((ds.Tables["Phone"] != null)) {
-                    base.Tables.Add(new PhoneDataTable(ds.Tables["Phone"]));
+                if ((ds.Tables["Person"] != null)) {
+                    base.Tables.Add(new PersonDataTable(ds.Tables["Person"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -311,16 +304,6 @@ namespace Профсоюзная_база {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public ТелефоныDataTable Телефоны {
-            get {
-                return this.tableТелефоны;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
         public Типы_заявленийDataTable Типы_заявлений {
             get {
                 return this.tableТипы_заявлений;
@@ -341,9 +324,9 @@ namespace Профсоюзная_база {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public AllPersonDataTable AllPerson {
+        public ТелефоныDataTable Телефоны {
             get {
-                return this.tableAllPerson;
+                return this.tableТелефоны;
             }
         }
         
@@ -351,9 +334,9 @@ namespace Профсоюзная_база {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PhoneDataTable Phone {
+        public PersonDataTable Person {
             get {
-                return this.tablePhone;
+                return this.tablePerson;
             }
         }
         
@@ -460,20 +443,17 @@ namespace Профсоюзная_база {
                 if ((ds.Tables["Протоколы_заседаний"] != null)) {
                     base.Tables.Add(new Протоколы_заседанийDataTable(ds.Tables["Протоколы_заседаний"]));
                 }
-                if ((ds.Tables["Телефоны"] != null)) {
-                    base.Tables.Add(new ТелефоныDataTable(ds.Tables["Телефоны"]));
-                }
                 if ((ds.Tables["Типы_заявлений"] != null)) {
                     base.Tables.Add(new Типы_заявленийDataTable(ds.Tables["Типы_заявлений"]));
                 }
                 if ((ds.Tables["Типы_пользователя"] != null)) {
                     base.Tables.Add(new Типы_пользователяDataTable(ds.Tables["Типы_пользователя"]));
                 }
-                if ((ds.Tables["AllPerson"] != null)) {
-                    base.Tables.Add(new AllPersonDataTable(ds.Tables["AllPerson"]));
+                if ((ds.Tables["Телефоны"] != null)) {
+                    base.Tables.Add(new ТелефоныDataTable(ds.Tables["Телефоны"]));
                 }
-                if ((ds.Tables["Phone"] != null)) {
-                    base.Tables.Add(new PhoneDataTable(ds.Tables["Phone"]));
+                if ((ds.Tables["Person"] != null)) {
+                    base.Tables.Add(new PersonDataTable(ds.Tables["Person"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -580,12 +560,6 @@ namespace Профсоюзная_база {
                     this.tableПротоколы_заседаний.InitVars();
                 }
             }
-            this.tableТелефоны = ((ТелефоныDataTable)(base.Tables["Телефоны"]));
-            if ((initTable == true)) {
-                if ((this.tableТелефоны != null)) {
-                    this.tableТелефоны.InitVars();
-                }
-            }
             this.tableТипы_заявлений = ((Типы_заявленийDataTable)(base.Tables["Типы_заявлений"]));
             if ((initTable == true)) {
                 if ((this.tableТипы_заявлений != null)) {
@@ -598,34 +572,33 @@ namespace Профсоюзная_база {
                     this.tableТипы_пользователя.InitVars();
                 }
             }
-            this.tableAllPerson = ((AllPersonDataTable)(base.Tables["AllPerson"]));
+            this.tableТелефоны = ((ТелефоныDataTable)(base.Tables["Телефоны"]));
             if ((initTable == true)) {
-                if ((this.tableAllPerson != null)) {
-                    this.tableAllPerson.InitVars();
+                if ((this.tableТелефоны != null)) {
+                    this.tableТелефоны.InitVars();
                 }
             }
-            this.tablePhone = ((PhoneDataTable)(base.Tables["Phone"]));
+            this.tablePerson = ((PersonDataTable)(base.Tables["Person"]));
             if ((initTable == true)) {
-                if ((this.tablePhone != null)) {
-                    this.tablePhone.InitVars();
+                if ((this.tablePerson != null)) {
+                    this.tablePerson.InitVars();
                 }
             }
-            this.relationFK_Члены_профсоюза_Гендер1 = this.Relations["FK_Члены_профсоюза_Гендер1"];
+            this.relationFK_Person_Члены_профсоюза = this.Relations["FK_Person_Члены_профсоюза"];
+            this.relationТелефоны_Члены_профсоюза = this.Relations["Телефоны_Члены_профсоюза"];
             this.relationFK_Члены_профсоюза_Должности1 = this.Relations["FK_Члены_профсоюза_Должности1"];
-            this.relationFK_Дети_Гендер = this.Relations["FK_Дети_Гендер"];
-            this.relationFK_Дети_родители_Дети = this.Relations["FK_Дети_родители_Дети"];
             this.relationFK_Дети_родители_Члены_профсоюза = this.Relations["FK_Дети_родители_Члены_профсоюза"];
-            this.relationFK_Заявления_Материальная_выплата = this.Relations["FK_Заявления_Материальная_выплата"];
-            this.relationFK_Заявления_Протоколы_заседаний = this.Relations["FK_Заявления_Протоколы_заседаний"];
+            this.relationFK_Дети_родители_Дети = this.Relations["FK_Дети_родители_Дети"];
             this.relationFK_Заявления_Типы_заявлений = this.Relations["FK_Заявления_Типы_заявлений"];
-            this.relationFK_Заявления_Члены_профсоюза = this.Relations["FK_Заявления_Члены_профсоюза"];
+            this.relationFK_Заявления_Протоколы_заседаний = this.Relations["FK_Заявления_Протоколы_заседаний"];
+            this.relationFK_Заявления_Материальная_выплата = this.Relations["FK_Заявления_Материальная_выплата"];
             this.relationFK_Материальная_выплата_Основания_МП = this.Relations["FK_Материальная_выплата_Основания_МП"];
-            this.relationFK_ОО_ЧП_Общественные_организации = this.Relations["FK_ОО_ЧП_Общественные_организации"];
             this.relationFK_ОО_ЧП_Члены_профсоюза = this.Relations["FK_ОО_ЧП_Члены_профсоюза"];
+            this.relationFK_ОО_ЧП_Общественные_организации = this.Relations["FK_ОО_ЧП_Общественные_организации"];
             this.relationFK_Пользователи_Типы_пользователя = this.Relations["FK_Пользователи_Типы_пользователя"];
-            this.relationFK_Телефоны_Члены_профсоюза = this.Relations["FK_Телефоны_Члены_профсоюза"];
-            this.relationFK_Члены_профсоюза_Гендер11 = this.Relations["FK_Члены_профсоюза_Гендер11"];
-            this.relationFK_Дети_Гендер1 = this.Relations["FK_Дети_Гендер1"];
+            this.relationFK_Дети_Гендер = this.Relations["FK_Дети_Гендер"];
+            this.relationFK_Заявления_Члены_профсоюза = this.Relations["FK_Заявления_Члены_профсоюза"];
+            this.relationFK_Члены_профсоюза_Гендер1 = this.Relations["FK_Члены_профсоюза_Гендер1"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -660,80 +633,159 @@ namespace Профсоюзная_база {
             base.Tables.Add(this.tableПользователи);
             this.tableПротоколы_заседаний = new Протоколы_заседанийDataTable();
             base.Tables.Add(this.tableПротоколы_заседаний);
-            this.tableТелефоны = new ТелефоныDataTable();
-            base.Tables.Add(this.tableТелефоны);
             this.tableТипы_заявлений = new Типы_заявленийDataTable();
             base.Tables.Add(this.tableТипы_заявлений);
             this.tableТипы_пользователя = new Типы_пользователяDataTable();
             base.Tables.Add(this.tableТипы_пользователя);
-            this.tableAllPerson = new AllPersonDataTable();
-            base.Tables.Add(this.tableAllPerson);
-            this.tablePhone = new PhoneDataTable();
-            base.Tables.Add(this.tablePhone);
-            this.relationFK_Члены_профсоюза_Гендер1 = new global::System.Data.DataRelation("FK_Члены_профсоюза_Гендер1", new global::System.Data.DataColumn[] {
-                        this.tableГендер.Код_полаColumn}, new global::System.Data.DataColumn[] {
-                        this.tableЧлены_профсоюза.Код_полаColumn}, false);
-            this.Relations.Add(this.relationFK_Члены_профсоюза_Гендер1);
+            this.tableТелефоны = new ТелефоныDataTable();
+            base.Tables.Add(this.tableТелефоны);
+            this.tablePerson = new PersonDataTable();
+            base.Tables.Add(this.tablePerson);
+            global::System.Data.ForeignKeyConstraint fkc;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Person_Члены_профсоюза", new global::System.Data.DataColumn[] {
+                        this.tablePerson.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЧлены_профсоюза.Код_ЧПColumn});
+            this.tableЧлены_профсоюза.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("Телефоны_Члены_профсоюза", new global::System.Data.DataColumn[] {
+                        this.tableТелефоны.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЧлены_профсоюза.Код_ЧПColumn});
+            this.tableЧлены_профсоюза.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.Cascade;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Члены_профсоюза_Должности1", new global::System.Data.DataColumn[] {
+                        this.tableДолжности.Код_должностиColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЧлены_профсоюза.Код_должностиColumn});
+            this.tableЧлены_профсоюза.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Дети_родители_Члены_профсоюза", new global::System.Data.DataColumn[] {
+                        this.tableЧлены_профсоюза.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
+                        this.tableДети_родители.Код_ЧПColumn});
+            this.tableДети_родители.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.Cascade;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Дети_родители_Дети", new global::System.Data.DataColumn[] {
+                        this.tableДети.Код_детиColumn}, new global::System.Data.DataColumn[] {
+                        this.tableДети_родители.Код_детиColumn});
+            this.tableДети_родители.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.Cascade;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Заявления_Типы_заявлений", new global::System.Data.DataColumn[] {
+                        this.tableТипы_заявлений.Код_ТЗColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЗаявления.Код_ТЗColumn});
+            this.tableЗаявления.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Заявления_Протоколы_заседаний", new global::System.Data.DataColumn[] {
+                        this.tableПротоколы_заседаний.Код_протоколаColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЗаявления.Код_протоколаColumn});
+            this.tableЗаявления.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Заявления_Материальная_выплата", new global::System.Data.DataColumn[] {
+                        this.tableМатериальная_выплата.Код_МПColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЗаявления.Код_МПColumn});
+            this.tableЗаявления.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Материальная_выплата_Основания_МП", new global::System.Data.DataColumn[] {
+                        this.tableОснования_МП.Код_основанияColumn}, new global::System.Data.DataColumn[] {
+                        this.tableМатериальная_выплата.Код_основанияColumn});
+            this.tableМатериальная_выплата.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_ОО_ЧП_Члены_профсоюза", new global::System.Data.DataColumn[] {
+                        this.tableЧлены_профсоюза.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
+                        this.tableОО_ЧП.Код_ЧПColumn});
+            this.tableОО_ЧП.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_ОО_ЧП_Общественные_организации", new global::System.Data.DataColumn[] {
+                        this.tableОбщественные_организации.Код_ООColumn}, new global::System.Data.DataColumn[] {
+                        this.tableОО_ЧП.Код_ООColumn});
+            this.tableОО_ЧП.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Пользователи_Типы_пользователя", new global::System.Data.DataColumn[] {
+                        this.tableТипы_пользователя.Код_типа_пользователяColumn}, new global::System.Data.DataColumn[] {
+                        this.tableПользователи.Код_типа_пользователяColumn});
+            this.tableПользователи.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            this.relationFK_Person_Члены_профсоюза = new global::System.Data.DataRelation("FK_Person_Члены_профсоюза", new global::System.Data.DataColumn[] {
+                        this.tablePerson.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЧлены_профсоюза.Код_ЧПColumn}, false);
+            this.Relations.Add(this.relationFK_Person_Члены_профсоюза);
+            this.relationТелефоны_Члены_профсоюза = new global::System.Data.DataRelation("Телефоны_Члены_профсоюза", new global::System.Data.DataColumn[] {
+                        this.tableТелефоны.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЧлены_профсоюза.Код_ЧПColumn}, false);
+            this.Relations.Add(this.relationТелефоны_Члены_профсоюза);
             this.relationFK_Члены_профсоюза_Должности1 = new global::System.Data.DataRelation("FK_Члены_профсоюза_Должности1", new global::System.Data.DataColumn[] {
                         this.tableДолжности.Код_должностиColumn}, new global::System.Data.DataColumn[] {
                         this.tableЧлены_профсоюза.Код_должностиColumn}, false);
             this.Relations.Add(this.relationFK_Члены_профсоюза_Должности1);
-            this.relationFK_Дети_Гендер = new global::System.Data.DataRelation("FK_Дети_Гендер", new global::System.Data.DataColumn[] {
-                        this.tableГендер.Код_полаColumn}, new global::System.Data.DataColumn[] {
-                        this.tableДети.Код_полаColumn}, false);
-            this.Relations.Add(this.relationFK_Дети_Гендер);
-            this.relationFK_Дети_родители_Дети = new global::System.Data.DataRelation("FK_Дети_родители_Дети", new global::System.Data.DataColumn[] {
-                        this.tableДети.Код_детиColumn}, new global::System.Data.DataColumn[] {
-                        this.tableДети_родители.Код_детиColumn}, false);
-            this.Relations.Add(this.relationFK_Дети_родители_Дети);
             this.relationFK_Дети_родители_Члены_профсоюза = new global::System.Data.DataRelation("FK_Дети_родители_Члены_профсоюза", new global::System.Data.DataColumn[] {
                         this.tableЧлены_профсоюза.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
                         this.tableДети_родители.Код_ЧПColumn}, false);
             this.Relations.Add(this.relationFK_Дети_родители_Члены_профсоюза);
-            this.relationFK_Заявления_Материальная_выплата = new global::System.Data.DataRelation("FK_Заявления_Материальная_выплата", new global::System.Data.DataColumn[] {
-                        this.tableМатериальная_выплата.Код_МПColumn}, new global::System.Data.DataColumn[] {
-                        this.tableЗаявления.Код_МПColumn}, false);
-            this.Relations.Add(this.relationFK_Заявления_Материальная_выплата);
-            this.relationFK_Заявления_Протоколы_заседаний = new global::System.Data.DataRelation("FK_Заявления_Протоколы_заседаний", new global::System.Data.DataColumn[] {
-                        this.tableПротоколы_заседаний.Код_протоколаColumn}, new global::System.Data.DataColumn[] {
-                        this.tableЗаявления.Код_протоколаColumn}, false);
-            this.Relations.Add(this.relationFK_Заявления_Протоколы_заседаний);
+            this.relationFK_Дети_родители_Дети = new global::System.Data.DataRelation("FK_Дети_родители_Дети", new global::System.Data.DataColumn[] {
+                        this.tableДети.Код_детиColumn}, new global::System.Data.DataColumn[] {
+                        this.tableДети_родители.Код_детиColumn}, false);
+            this.Relations.Add(this.relationFK_Дети_родители_Дети);
             this.relationFK_Заявления_Типы_заявлений = new global::System.Data.DataRelation("FK_Заявления_Типы_заявлений", new global::System.Data.DataColumn[] {
                         this.tableТипы_заявлений.Код_ТЗColumn}, new global::System.Data.DataColumn[] {
                         this.tableЗаявления.Код_ТЗColumn}, false);
             this.Relations.Add(this.relationFK_Заявления_Типы_заявлений);
-            this.relationFK_Заявления_Члены_профсоюза = new global::System.Data.DataRelation("FK_Заявления_Члены_профсоюза", new global::System.Data.DataColumn[] {
-                        this.tableЧлены_профсоюза.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
-                        this.tableЗаявления.Код_ЧПColumn}, false);
-            this.Relations.Add(this.relationFK_Заявления_Члены_профсоюза);
+            this.relationFK_Заявления_Протоколы_заседаний = new global::System.Data.DataRelation("FK_Заявления_Протоколы_заседаний", new global::System.Data.DataColumn[] {
+                        this.tableПротоколы_заседаний.Код_протоколаColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЗаявления.Код_протоколаColumn}, false);
+            this.Relations.Add(this.relationFK_Заявления_Протоколы_заседаний);
+            this.relationFK_Заявления_Материальная_выплата = new global::System.Data.DataRelation("FK_Заявления_Материальная_выплата", new global::System.Data.DataColumn[] {
+                        this.tableМатериальная_выплата.Код_МПColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЗаявления.Код_МПColumn}, false);
+            this.Relations.Add(this.relationFK_Заявления_Материальная_выплата);
             this.relationFK_Материальная_выплата_Основания_МП = new global::System.Data.DataRelation("FK_Материальная_выплата_Основания_МП", new global::System.Data.DataColumn[] {
                         this.tableОснования_МП.Код_основанияColumn}, new global::System.Data.DataColumn[] {
                         this.tableМатериальная_выплата.Код_основанияColumn}, false);
             this.Relations.Add(this.relationFK_Материальная_выплата_Основания_МП);
-            this.relationFK_ОО_ЧП_Общественные_организации = new global::System.Data.DataRelation("FK_ОО_ЧП_Общественные_организации", new global::System.Data.DataColumn[] {
-                        this.tableОбщественные_организации.Код_ООColumn}, new global::System.Data.DataColumn[] {
-                        this.tableОО_ЧП.Код_ООColumn}, false);
-            this.Relations.Add(this.relationFK_ОО_ЧП_Общественные_организации);
             this.relationFK_ОО_ЧП_Члены_профсоюза = new global::System.Data.DataRelation("FK_ОО_ЧП_Члены_профсоюза", new global::System.Data.DataColumn[] {
                         this.tableЧлены_профсоюза.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
                         this.tableОО_ЧП.Код_ЧПColumn}, false);
             this.Relations.Add(this.relationFK_ОО_ЧП_Члены_профсоюза);
+            this.relationFK_ОО_ЧП_Общественные_организации = new global::System.Data.DataRelation("FK_ОО_ЧП_Общественные_организации", new global::System.Data.DataColumn[] {
+                        this.tableОбщественные_организации.Код_ООColumn}, new global::System.Data.DataColumn[] {
+                        this.tableОО_ЧП.Код_ООColumn}, false);
+            this.Relations.Add(this.relationFK_ОО_ЧП_Общественные_организации);
             this.relationFK_Пользователи_Типы_пользователя = new global::System.Data.DataRelation("FK_Пользователи_Типы_пользователя", new global::System.Data.DataColumn[] {
                         this.tableТипы_пользователя.Код_типа_пользователяColumn}, new global::System.Data.DataColumn[] {
                         this.tableПользователи.Код_типа_пользователяColumn}, false);
             this.Relations.Add(this.relationFK_Пользователи_Типы_пользователя);
-            this.relationFK_Телефоны_Члены_профсоюза = new global::System.Data.DataRelation("FK_Телефоны_Члены_профсоюза", new global::System.Data.DataColumn[] {
-                        this.tableЧлены_профсоюза.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
-                        this.tableТелефоны.Код_ЧПColumn}, false);
-            this.Relations.Add(this.relationFK_Телефоны_Члены_профсоюза);
-            this.relationFK_Члены_профсоюза_Гендер11 = new global::System.Data.DataRelation("FK_Члены_профсоюза_Гендер11", new global::System.Data.DataColumn[] {
-                        this.tableAllPerson.Код_полаColumn}, new global::System.Data.DataColumn[] {
-                        this.tableЧлены_профсоюза.Код_полаColumn}, false);
-            this.Relations.Add(this.relationFK_Члены_профсоюза_Гендер11);
-            this.relationFK_Дети_Гендер1 = new global::System.Data.DataRelation("FK_Дети_Гендер1", new global::System.Data.DataColumn[] {
-                        this.tableAllPerson.Код_полаColumn}, new global::System.Data.DataColumn[] {
+            this.relationFK_Дети_Гендер = new global::System.Data.DataRelation("FK_Дети_Гендер", new global::System.Data.DataColumn[] {
+                        this.tableГендер.Код_полаColumn}, new global::System.Data.DataColumn[] {
                         this.tableДети.Код_полаColumn}, false);
-            this.Relations.Add(this.relationFK_Дети_Гендер1);
+            this.Relations.Add(this.relationFK_Дети_Гендер);
+            this.relationFK_Заявления_Члены_профсоюза = new global::System.Data.DataRelation("FK_Заявления_Члены_профсоюза", new global::System.Data.DataColumn[] {
+                        this.tableЧлены_профсоюза.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЗаявления.Код_ЧПColumn}, false);
+            this.Relations.Add(this.relationFK_Заявления_Члены_профсоюза);
+            this.relationFK_Члены_профсоюза_Гендер1 = new global::System.Data.DataRelation("FK_Члены_профсоюза_Гендер1", new global::System.Data.DataColumn[] {
+                        this.tableГендер.Код_полаColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЧлены_профсоюза.Код_полаColumn}, false);
+            this.Relations.Add(this.relationFK_Члены_профсоюза_Гендер1);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -810,12 +862,6 @@ namespace Профсоюзная_база {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeТелефоны() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeТипы_заявлений() {
             return false;
         }
@@ -828,13 +874,13 @@ namespace Профсоюзная_база {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeAllPerson() {
+        private bool ShouldSerializeТелефоны() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializePhone() {
+        private bool ShouldSerializePerson() {
             return false;
         }
         
@@ -930,19 +976,16 @@ namespace Профсоюзная_база {
         public delegate void Протоколы_заседанийRowChangeEventHandler(object sender, Протоколы_заседанийRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void ТелефоныRowChangeEventHandler(object sender, ТелефоныRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void Типы_заявленийRowChangeEventHandler(object sender, Типы_заявленийRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void Типы_пользователяRowChangeEventHandler(object sender, Типы_пользователяRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void AllPersonRowChangeEventHandler(object sender, AllPersonRowChangeEvent e);
+        public delegate void ТелефоныRowChangeEventHandler(object sender, ТелефоныRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void PhoneRowChangeEventHandler(object sender, PhoneRowChangeEvent e);
+        public delegate void PersonRowChangeEventHandler(object sender, PersonRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -4341,8 +4384,6 @@ namespace Профсоюзная_база {
             
             private global::System.Data.DataColumn columnТема_заседания;
             
-            private global::System.Data.DataColumn columnТекст_протокола;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Протоколы_заседанийDataTable() {
@@ -4410,14 +4451,6 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Текст_протоколаColumn {
-                get {
-                    return this.columnТекст_протокола;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4453,14 +4486,13 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Протоколы_заседанийRow AddПротоколы_заседанийRow(int Номер_протокола, System.DateTime Дата_протокола, string Тема_заседания, string Текст_протокола) {
+            public Протоколы_заседанийRow AddПротоколы_заседанийRow(int Номер_протокола, System.DateTime Дата_протокола, string Тема_заседания) {
                 Протоколы_заседанийRow rowПротоколы_заседанийRow = ((Протоколы_заседанийRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Номер_протокола,
                         Дата_протокола,
-                        Тема_заседания,
-                        Текст_протокола};
+                        Тема_заседания};
                 rowПротоколы_заседанийRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowПротоколы_заседанийRow);
                 return rowПротоколы_заседанийRow;
@@ -4494,7 +4526,6 @@ namespace Профсоюзная_база {
                 this.columnНомер_протокола = base.Columns["Номер_протокола"];
                 this.columnДата_протокола = base.Columns["Дата_протокола"];
                 this.columnТема_заседания = base.Columns["Тема_заседания"];
-                this.columnТекст_протокола = base.Columns["Текст_протокола"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4508,8 +4539,6 @@ namespace Профсоюзная_база {
                 base.Columns.Add(this.columnДата_протокола);
                 this.columnТема_заседания = new global::System.Data.DataColumn("Тема_заседания", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnТема_заседания);
-                this.columnТекст_протокола = new global::System.Data.DataColumn("Текст_протокола", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnТекст_протокола);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnКод_протокола}, true));
                 this.columnКод_протокола.AutoIncrement = true;
@@ -4521,7 +4550,6 @@ namespace Профсоюзная_база {
                 this.columnНомер_протокола.AllowDBNull = false;
                 this.columnДата_протокола.AllowDBNull = false;
                 this.columnТема_заседания.MaxLength = 2147483647;
-                this.columnТекст_протокола.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4608,302 +4636,6 @@ namespace Профсоюзная_база {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "Протоколы_заседанийDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class ТелефоныDataTable : global::System.Data.TypedTableBase<ТелефоныRow> {
-            
-            private global::System.Data.DataColumn columnКод_номера;
-            
-            private global::System.Data.DataColumn columnКод_ЧП;
-            
-            private global::System.Data.DataColumn columnНомер_телефона;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ТелефоныDataTable() {
-                this.TableName = "Телефоны";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ТелефоныDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected ТелефоныDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Код_номераColumn {
-                get {
-                    return this.columnКод_номера;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Код_ЧПColumn {
-                get {
-                    return this.columnКод_ЧП;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Номер_телефонаColumn {
-                get {
-                    return this.columnНомер_телефона;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ТелефоныRow this[int index] {
-                get {
-                    return ((ТелефоныRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ТелефоныRowChangeEventHandler ТелефоныRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ТелефоныRowChangeEventHandler ТелефоныRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ТелефоныRowChangeEventHandler ТелефоныRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event ТелефоныRowChangeEventHandler ТелефоныRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddТелефоныRow(ТелефоныRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ТелефоныRow AddТелефоныRow(Члены_профсоюзаRow parentЧлены_профсоюзаRowByFK_Телефоны_Члены_профсоюза, string Номер_телефона) {
-                ТелефоныRow rowТелефоныRow = ((ТелефоныRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        null,
-                        null,
-                        Номер_телефона};
-                if ((parentЧлены_профсоюзаRowByFK_Телефоны_Члены_профсоюза != null)) {
-                    columnValuesArray[1] = parentЧлены_профсоюзаRowByFK_Телефоны_Члены_профсоюза[0];
-                }
-                rowТелефоныRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowТелефоныRow);
-                return rowТелефоныRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ТелефоныRow FindByКод_номера(int Код_номера) {
-                return ((ТелефоныRow)(this.Rows.Find(new object[] {
-                            Код_номера})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                ТелефоныDataTable cln = ((ТелефоныDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new ТелефоныDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.columnКод_номера = base.Columns["Код_номера"];
-                this.columnКод_ЧП = base.Columns["Код_ЧП"];
-                this.columnНомер_телефона = base.Columns["Номер_телефона"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.columnКод_номера = new global::System.Data.DataColumn("Код_номера", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnКод_номера);
-                this.columnКод_ЧП = new global::System.Data.DataColumn("Код_ЧП", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnКод_ЧП);
-                this.columnНомер_телефона = new global::System.Data.DataColumn("Номер_телефона", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnНомер_телефона);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnКод_номера}, true));
-                this.columnКод_номера.AutoIncrement = true;
-                this.columnКод_номера.AutoIncrementSeed = -1;
-                this.columnКод_номера.AutoIncrementStep = -1;
-                this.columnКод_номера.AllowDBNull = false;
-                this.columnКод_номера.ReadOnly = true;
-                this.columnКод_номера.Unique = true;
-                this.columnКод_ЧП.AllowDBNull = false;
-                this.columnНомер_телефона.AllowDBNull = false;
-                this.columnНомер_телефона.MaxLength = 50;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ТелефоныRow NewТелефоныRow() {
-                return ((ТелефоныRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new ТелефоныRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(ТелефоныRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.ТелефоныRowChanged != null)) {
-                    this.ТелефоныRowChanged(this, new ТелефоныRowChangeEvent(((ТелефоныRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.ТелефоныRowChanging != null)) {
-                    this.ТелефоныRowChanging(this, new ТелефоныRowChangeEvent(((ТелефоныRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.ТелефоныRowDeleted != null)) {
-                    this.ТелефоныRowDeleted(this, new ТелефоныRowChangeEvent(((ТелефоныRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.ТелефоныRowDeleting != null)) {
-                    this.ТелефоныRowDeleting(this, new ТелефоныRowChangeEvent(((ТелефоныRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveТелефоныRow(ТелефоныRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "ТелефоныDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -5505,40 +5237,18 @@ namespace Профсоюзная_база {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class AllPersonDataTable : global::System.Data.TypedTableBase<AllPersonRow> {
-            
-            private global::System.Data.DataColumn columnКод_ЧП;
-            
-            private global::System.Data.DataColumn columnФамилия;
-            
-            private global::System.Data.DataColumn columnИмя;
-            
-            private global::System.Data.DataColumn columnОтчество;
-            
-            private global::System.Data.DataColumn columnДата_рождения;
-            
-            private global::System.Data.DataColumn columnКод_пола;
-            
-            private global::System.Data.DataColumn columnКод_должности;
+        public partial class ТелефоныDataTable : global::System.Data.TypedTableBase<ТелефоныRow> {
             
             private global::System.Data.DataColumn columnКод_номера;
             
-            private global::System.Data.DataColumn columnКод_ЧП1;
+            private global::System.Data.DataColumn columnКод_ЧП;
             
             private global::System.Data.DataColumn columnНомер_телефона;
             
-            private global::System.Data.DataColumn columnКод_должности1;
-            
-            private global::System.Data.DataColumn columnДолжность;
-            
-            private global::System.Data.DataColumn columnКод_пола1;
-            
-            private global::System.Data.DataColumn columnПол;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AllPersonDataTable() {
-                this.TableName = "AllPerson";
+            public ТелефоныDataTable() {
+                this.TableName = "Телефоны";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -5546,7 +5256,7 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal AllPersonDataTable(global::System.Data.DataTable table) {
+            internal ТелефоныDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -5563,7 +5273,312 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected AllPersonDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected ТелефоныDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Код_номераColumn {
+                get {
+                    return this.columnКод_номера;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Код_ЧПColumn {
+                get {
+                    return this.columnКод_ЧП;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Номер_телефонаColumn {
+                get {
+                    return this.columnНомер_телефона;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ТелефоныRow this[int index] {
+                get {
+                    return ((ТелефоныRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ТелефоныRowChangeEventHandler ТелефоныRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ТелефоныRowChangeEventHandler ТелефоныRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ТелефоныRowChangeEventHandler ТелефоныRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event ТелефоныRowChangeEventHandler ТелефоныRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddТелефоныRow(ТелефоныRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ТелефоныRow AddТелефоныRow(int Код_ЧП, string Номер_телефона) {
+                ТелефоныRow rowТелефоныRow = ((ТелефоныRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        Код_ЧП,
+                        Номер_телефона};
+                rowТелефоныRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowТелефоныRow);
+                return rowТелефоныRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ТелефоныRow FindByКод_номера(int Код_номера) {
+                return ((ТелефоныRow)(this.Rows.Find(new object[] {
+                            Код_номера})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                ТелефоныDataTable cln = ((ТелефоныDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new ТелефоныDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnКод_номера = base.Columns["Код_номера"];
+                this.columnКод_ЧП = base.Columns["Код_ЧП"];
+                this.columnНомер_телефона = base.Columns["Номер_телефона"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnКод_номера = new global::System.Data.DataColumn("Код_номера", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnКод_номера);
+                this.columnКод_ЧП = new global::System.Data.DataColumn("Код_ЧП", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnКод_ЧП);
+                this.columnНомер_телефона = new global::System.Data.DataColumn("Номер_телефона", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnНомер_телефона);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnКод_номера}, true));
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint2", new global::System.Data.DataColumn[] {
+                                this.columnКод_ЧП}, false));
+                this.columnКод_номера.AutoIncrement = true;
+                this.columnКод_номера.AutoIncrementSeed = -1;
+                this.columnКод_номера.AutoIncrementStep = -1;
+                this.columnКод_номера.AllowDBNull = false;
+                this.columnКод_номера.ReadOnly = true;
+                this.columnКод_номера.Unique = true;
+                this.columnКод_ЧП.AllowDBNull = false;
+                this.columnКод_ЧП.Unique = true;
+                this.columnНомер_телефона.MaxLength = 50;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ТелефоныRow NewТелефоныRow() {
+                return ((ТелефоныRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new ТелефоныRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(ТелефоныRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.ТелефоныRowChanged != null)) {
+                    this.ТелефоныRowChanged(this, new ТелефоныRowChangeEvent(((ТелефоныRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.ТелефоныRowChanging != null)) {
+                    this.ТелефоныRowChanging(this, new ТелефоныRowChangeEvent(((ТелефоныRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.ТелефоныRowDeleted != null)) {
+                    this.ТелефоныRowDeleted(this, new ТелефоныRowChangeEvent(((ТелефоныRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.ТелефоныRowDeleting != null)) {
+                    this.ТелефоныRowDeleting(this, new ТелефоныRowChangeEvent(((ТелефоныRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveТелефоныRow(ТелефоныRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSet1 ds = new DataSet1();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "ТелефоныDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class PersonDataTable : global::System.Data.TypedTableBase<PersonRow> {
+            
+            private global::System.Data.DataColumn columnКод_ЧП;
+            
+            private global::System.Data.DataColumn columnФамилия;
+            
+            private global::System.Data.DataColumn columnИмя;
+            
+            private global::System.Data.DataColumn columnОтчество;
+            
+            private global::System.Data.DataColumn columnДата_рождения;
+            
+            private global::System.Data.DataColumn columnПол;
+            
+            private global::System.Data.DataColumn columnДолжность;
+            
+            private global::System.Data.DataColumn columnНомер_телефона;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public PersonDataTable() {
+                this.TableName = "Person";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal PersonDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected PersonDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -5610,49 +5625,9 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Код_полаColumn {
+            public global::System.Data.DataColumn ПолColumn {
                 get {
-                    return this.columnКод_пола;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Код_должностиColumn {
-                get {
-                    return this.columnКод_должности;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Код_номераColumn {
-                get {
-                    return this.columnКод_номера;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Код_ЧП1Column {
-                get {
-                    return this.columnКод_ЧП1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Номер_телефонаColumn {
-                get {
-                    return this.columnНомер_телефона;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Код_должности1Column {
-                get {
-                    return this.columnКод_должности1;
+                    return this.columnПол;
                 }
             }
             
@@ -5666,17 +5641,9 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Код_пола1Column {
+            public global::System.Data.DataColumn Номер_телефонаColumn {
                 get {
-                    return this.columnКод_пола1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ПолColumn {
-                get {
-                    return this.columnПол;
+                    return this.columnНомер_телефона;
                 }
             }
             
@@ -5691,68 +5658,59 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AllPersonRow this[int index] {
+            public PersonRow this[int index] {
                 get {
-                    return ((AllPersonRow)(this.Rows[index]));
+                    return ((PersonRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AllPersonRowChangeEventHandler AllPersonRowChanging;
+            public event PersonRowChangeEventHandler PersonRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AllPersonRowChangeEventHandler AllPersonRowChanged;
+            public event PersonRowChangeEventHandler PersonRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AllPersonRowChangeEventHandler AllPersonRowDeleting;
+            public event PersonRowChangeEventHandler PersonRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event AllPersonRowChangeEventHandler AllPersonRowDeleted;
+            public event PersonRowChangeEventHandler PersonRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddAllPersonRow(AllPersonRow row) {
+            public void AddPersonRow(PersonRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AllPersonRow AddAllPersonRow(string Фамилия, string Имя, string Отчество, System.DateTime Дата_рождения, int Код_пола, int Код_должности, int Код_ЧП1, string Номер_телефона, string Должность, string Пол) {
-                AllPersonRow rowAllPersonRow = ((AllPersonRow)(this.NewRow()));
+            public PersonRow AddPersonRow(string Фамилия, string Имя, string Отчество, System.DateTime Дата_рождения, string Пол, string Должность, string Номер_телефона) {
+                PersonRow rowPersonRow = ((PersonRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Фамилия,
                         Имя,
                         Отчество,
                         Дата_рождения,
-                        Код_пола,
-                        Код_должности,
-                        null,
-                        Код_ЧП1,
-                        Номер_телефона,
-                        null,
+                        Пол,
                         Должность,
-                        null,
-                        Пол};
-                rowAllPersonRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowAllPersonRow);
-                return rowAllPersonRow;
+                        Номер_телефона};
+                rowPersonRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowPersonRow);
+                return rowPersonRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AllPersonRow FindByКод_ЧПКод_номераКод_должности1Код_пола1(int Код_ЧП, int Код_номера, int Код_должности1, int Код_пола1) {
-                return ((AllPersonRow)(this.Rows.Find(new object[] {
-                            Код_ЧП,
-                            Код_номера,
-                            Код_должности1,
-                            Код_пола1})));
+            public PersonRow FindByКод_ЧП(int Код_ЧП) {
+                return ((PersonRow)(this.Rows.Find(new object[] {
+                            Код_ЧП})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                AllPersonDataTable cln = ((AllPersonDataTable)(base.Clone()));
+                PersonDataTable cln = ((PersonDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -5760,7 +5718,7 @@ namespace Профсоюзная_база {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new AllPersonDataTable();
+                return new PersonDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5771,15 +5729,9 @@ namespace Профсоюзная_база {
                 this.columnИмя = base.Columns["Имя"];
                 this.columnОтчество = base.Columns["Отчество"];
                 this.columnДата_рождения = base.Columns["Дата_рождения"];
-                this.columnКод_пола = base.Columns["Код_пола"];
-                this.columnКод_должности = base.Columns["Код_должности"];
-                this.columnКод_номера = base.Columns["Код_номера"];
-                this.columnКод_ЧП1 = base.Columns["Код_ЧП1"];
-                this.columnНомер_телефона = base.Columns["Номер_телефона"];
-                this.columnКод_должности1 = base.Columns["Код_должности1"];
-                this.columnДолжность = base.Columns["Должность"];
-                this.columnКод_пола1 = base.Columns["Код_пола1"];
                 this.columnПол = base.Columns["Пол"];
+                this.columnДолжность = base.Columns["Должность"];
+                this.columnНомер_телефона = base.Columns["Номер_телефона"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5795,384 +5747,57 @@ namespace Профсоюзная_база {
                 base.Columns.Add(this.columnОтчество);
                 this.columnДата_рождения = new global::System.Data.DataColumn("Дата_рождения", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnДата_рождения);
-                this.columnКод_пола = new global::System.Data.DataColumn("Код_пола", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnКод_пола);
-                this.columnКод_должности = new global::System.Data.DataColumn("Код_должности", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnКод_должности);
-                this.columnКод_номера = new global::System.Data.DataColumn("Код_номера", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnКод_номера);
-                this.columnКод_ЧП1 = new global::System.Data.DataColumn("Код_ЧП1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnКод_ЧП1);
-                this.columnНомер_телефона = new global::System.Data.DataColumn("Номер_телефона", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnНомер_телефона);
-                this.columnКод_должности1 = new global::System.Data.DataColumn("Код_должности1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnКод_должности1);
-                this.columnДолжность = new global::System.Data.DataColumn("Должность", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnДолжность);
-                this.columnКод_пола1 = new global::System.Data.DataColumn("Код_пола1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnКод_пола1);
                 this.columnПол = new global::System.Data.DataColumn("Пол", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnПол);
+                this.columnДолжность = new global::System.Data.DataColumn("Должность", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnДолжность);
+                this.columnНомер_телефона = new global::System.Data.DataColumn("Номер_телефона", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnНомер_телефона);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnКод_ЧП,
-                                this.columnКод_номера,
-                                this.columnКод_должности1,
-                                this.columnКод_пола1}, true));
+                                this.columnКод_ЧП}, true));
                 this.columnКод_ЧП.AutoIncrement = true;
                 this.columnКод_ЧП.AutoIncrementSeed = -1;
                 this.columnКод_ЧП.AutoIncrementStep = -1;
                 this.columnКод_ЧП.AllowDBNull = false;
                 this.columnКод_ЧП.ReadOnly = true;
+                this.columnКод_ЧП.Unique = true;
                 this.columnФамилия.AllowDBNull = false;
                 this.columnФамилия.MaxLength = 50;
                 this.columnИмя.AllowDBNull = false;
                 this.columnИмя.MaxLength = 50;
                 this.columnОтчество.MaxLength = 50;
                 this.columnДата_рождения.AllowDBNull = false;
-                this.columnКод_пола.AllowDBNull = false;
-                this.columnКод_должности.AllowDBNull = false;
-                this.columnКод_номера.AutoIncrement = true;
-                this.columnКод_номера.AutoIncrementSeed = -1;
-                this.columnКод_номера.AutoIncrementStep = -1;
-                this.columnКод_номера.AllowDBNull = false;
-                this.columnКод_номера.ReadOnly = true;
-                this.columnКод_ЧП1.AllowDBNull = false;
-                this.columnНомер_телефона.MaxLength = 50;
-                this.columnКод_должности1.AutoIncrement = true;
-                this.columnКод_должности1.AutoIncrementSeed = -1;
-                this.columnКод_должности1.AutoIncrementStep = -1;
-                this.columnКод_должности1.AllowDBNull = false;
-                this.columnКод_должности1.ReadOnly = true;
-                this.columnДолжность.AllowDBNull = false;
-                this.columnДолжность.MaxLength = 2147483647;
-                this.columnКод_пола1.AutoIncrement = true;
-                this.columnКод_пола1.AutoIncrementSeed = -1;
-                this.columnКод_пола1.AutoIncrementStep = -1;
-                this.columnКод_пола1.AllowDBNull = false;
-                this.columnКод_пола1.ReadOnly = true;
                 this.columnПол.AllowDBNull = false;
                 this.columnПол.MaxLength = 10;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AllPersonRow NewAllPersonRow() {
-                return ((AllPersonRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new AllPersonRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(AllPersonRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.AllPersonRowChanged != null)) {
-                    this.AllPersonRowChanged(this, new AllPersonRowChangeEvent(((AllPersonRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.AllPersonRowChanging != null)) {
-                    this.AllPersonRowChanging(this, new AllPersonRowChangeEvent(((AllPersonRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.AllPersonRowDeleted != null)) {
-                    this.AllPersonRowDeleted(this, new AllPersonRowChangeEvent(((AllPersonRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.AllPersonRowDeleting != null)) {
-                    this.AllPersonRowDeleting(this, new AllPersonRowChangeEvent(((AllPersonRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveAllPersonRow(AllPersonRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSet1 ds = new DataSet1();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "AllPersonDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PhoneDataTable : global::System.Data.TypedTableBase<PhoneRow> {
-            
-            private global::System.Data.DataColumn columnФамилия;
-            
-            private global::System.Data.DataColumn columnИмя;
-            
-            private global::System.Data.DataColumn columnОтчество;
-            
-            private global::System.Data.DataColumn columnНомер_телефона;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PhoneDataTable() {
-                this.TableName = "Phone";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal PhoneDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected PhoneDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ФамилияColumn {
-                get {
-                    return this.columnФамилия;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ИмяColumn {
-                get {
-                    return this.columnИмя;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn ОтчествоColumn {
-                get {
-                    return this.columnОтчество;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Номер_телефонаColumn {
-                get {
-                    return this.columnНомер_телефона;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PhoneRow this[int index] {
-                get {
-                    return ((PhoneRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PhoneRowChangeEventHandler PhoneRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PhoneRowChangeEventHandler PhoneRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PhoneRowChangeEventHandler PhoneRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event PhoneRowChangeEventHandler PhoneRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddPhoneRow(PhoneRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PhoneRow AddPhoneRow(string Фамилия, string Имя, string Отчество, string Номер_телефона) {
-                PhoneRow rowPhoneRow = ((PhoneRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        Фамилия,
-                        Имя,
-                        Отчество,
-                        Номер_телефона};
-                rowPhoneRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPhoneRow);
-                return rowPhoneRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                PhoneDataTable cln = ((PhoneDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new PhoneDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.columnФамилия = base.Columns["Фамилия"];
-                this.columnИмя = base.Columns["Имя"];
-                this.columnОтчество = base.Columns["Отчество"];
-                this.columnНомер_телефона = base.Columns["Номер_телефона"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.columnФамилия = new global::System.Data.DataColumn("Фамилия", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnФамилия);
-                this.columnИмя = new global::System.Data.DataColumn("Имя", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnИмя);
-                this.columnОтчество = new global::System.Data.DataColumn("Отчество", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnОтчество);
-                this.columnНомер_телефона = new global::System.Data.DataColumn("Номер_телефона", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnНомер_телефона);
-                this.columnФамилия.AllowDBNull = false;
-                this.columnФамилия.MaxLength = 50;
-                this.columnИмя.AllowDBNull = false;
-                this.columnИмя.MaxLength = 50;
-                this.columnОтчество.MaxLength = 50;
+                this.columnДолжность.AllowDBNull = false;
+                this.columnДолжность.MaxLength = 2147483647;
                 this.columnНомер_телефона.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PhoneRow NewPhoneRow() {
-                return ((PhoneRow)(this.NewRow()));
+            public PersonRow NewPersonRow() {
+                return ((PersonRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PhoneRow(builder);
+                return new PersonRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PhoneRow);
+                return typeof(PersonRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PhoneRowChanged != null)) {
-                    this.PhoneRowChanged(this, new PhoneRowChangeEvent(((PhoneRow)(e.Row)), e.Action));
+                if ((this.PersonRowChanged != null)) {
+                    this.PersonRowChanged(this, new PersonRowChangeEvent(((PersonRow)(e.Row)), e.Action));
                 }
             }
             
@@ -6180,8 +5805,8 @@ namespace Профсоюзная_база {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PhoneRowChanging != null)) {
-                    this.PhoneRowChanging(this, new PhoneRowChangeEvent(((PhoneRow)(e.Row)), e.Action));
+                if ((this.PersonRowChanging != null)) {
+                    this.PersonRowChanging(this, new PersonRowChangeEvent(((PersonRow)(e.Row)), e.Action));
                 }
             }
             
@@ -6189,8 +5814,8 @@ namespace Профсоюзная_база {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PhoneRowDeleted != null)) {
-                    this.PhoneRowDeleted(this, new PhoneRowChangeEvent(((PhoneRow)(e.Row)), e.Action));
+                if ((this.PersonRowDeleted != null)) {
+                    this.PersonRowDeleted(this, new PersonRowChangeEvent(((PersonRow)(e.Row)), e.Action));
                 }
             }
             
@@ -6198,14 +5823,14 @@ namespace Профсоюзная_база {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PhoneRowDeleting != null)) {
-                    this.PhoneRowDeleting(this, new PhoneRowChangeEvent(((PhoneRow)(e.Row)), e.Action));
+                if ((this.PersonRowDeleting != null)) {
+                    this.PersonRowDeleting(this, new PersonRowChangeEvent(((PersonRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemovePhoneRow(PhoneRow row) {
+            public void RemovePersonRow(PersonRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -6232,7 +5857,7 @@ namespace Профсоюзная_база {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PhoneDataTable";
+                attribute2.FixedValue = "PersonDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -6311,23 +5936,23 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Члены_профсоюзаRow[] GetЧлены_профсоюзаRows() {
-                if ((this.Table.ChildRelations["FK_Члены_профсоюза_Гендер1"] == null)) {
-                    return new Члены_профсоюзаRow[0];
-                }
-                else {
-                    return ((Члены_профсоюзаRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Члены_профсоюза_Гендер1"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ДетиRow[] GetДетиRows() {
                 if ((this.Table.ChildRelations["FK_Дети_Гендер"] == null)) {
                     return new ДетиRow[0];
                 }
                 else {
                     return ((ДетиRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Дети_Гендер"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Члены_профсоюзаRow[] GetЧлены_профсоюзаRows() {
+                if ((this.Table.ChildRelations["FK_Члены_профсоюза_Гендер1"] == null)) {
+                    return new Члены_профсоюзаRow[0];
+                }
+                else {
+                    return ((Члены_профсоюзаRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Члены_профсоюза_Гендер1"])));
                 }
             }
         }
@@ -6430,12 +6055,23 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ГендерRow ГендерRow {
+            public PersonRow PersonRow {
                 get {
-                    return ((ГендерRow)(this.GetParentRow(this.Table.ParentRelations["FK_Члены_профсоюза_Гендер1"])));
+                    return ((PersonRow)(this.GetParentRow(this.Table.ParentRelations["FK_Person_Члены_профсоюза"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Члены_профсоюза_Гендер1"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Person_Члены_профсоюза"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ТелефоныRow ТелефоныRow {
+                get {
+                    return ((ТелефоныRow)(this.GetParentRow(this.Table.ParentRelations["Телефоны_Члены_профсоюза"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Телефоны_Члены_профсоюза"]);
                 }
             }
             
@@ -6452,12 +6088,12 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AllPersonRow AllPersonRow {
+            public ГендерRow ГендерRow {
                 get {
-                    return ((AllPersonRow)(this.GetParentRow(this.Table.ParentRelations["FK_Члены_профсоюза_Гендер11"])));
+                    return ((ГендерRow)(this.GetParentRow(this.Table.ParentRelations["FK_Члены_профсоюза_Гендер1"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Члены_профсоюза_Гендер11"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Члены_профсоюза_Гендер1"]);
                 }
             }
             
@@ -6471,6 +6107,17 @@ namespace Профсоюзная_база {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetОтчествоNull() {
                 this[this.tableЧлены_профсоюза.ОтчествоColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ОО_ЧПRow[] GetОО_ЧПRows() {
+                if ((this.Table.ChildRelations["FK_ОО_ЧП_Члены_профсоюза"] == null)) {
+                    return new ОО_ЧПRow[0];
+                }
+                else {
+                    return ((ОО_ЧПRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ОО_ЧП_Члены_профсоюза"])));
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6492,28 +6139,6 @@ namespace Профсоюзная_база {
                 }
                 else {
                     return ((ЗаявленияRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Заявления_Члены_профсоюза"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ОО_ЧПRow[] GetОО_ЧПRows() {
-                if ((this.Table.ChildRelations["FK_ОО_ЧП_Члены_профсоюза"] == null)) {
-                    return new ОО_ЧПRow[0];
-                }
-                else {
-                    return ((ОО_ЧПRow[])(base.GetChildRows(this.Table.ChildRelations["FK_ОО_ЧП_Члены_профсоюза"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ТелефоныRow[] GetТелефоныRows() {
-                if ((this.Table.ChildRelations["FK_Телефоны_Члены_профсоюза"] == null)) {
-                    return new ТелефоныRow[0];
-                }
-                else {
-                    return ((ТелефоныRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Телефоны_Члены_профсоюза"])));
                 }
             }
         }
@@ -6616,17 +6241,6 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AllPersonRow AllPersonRow {
-                get {
-                    return ((AllPersonRow)(this.GetParentRow(this.Table.ParentRelations["FK_Дети_Гендер1"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Дети_Гендер1"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsОтчествоNull() {
                 return this.IsNull(this.tableДети.ОтчествоColumn);
             }
@@ -6698,23 +6312,23 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ДетиRow ДетиRow {
-                get {
-                    return ((ДетиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Дети_родители_Дети"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Дети_родители_Дети"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Члены_профсоюзаRow Члены_профсоюзаRow {
                 get {
                     return ((Члены_профсоюзаRow)(this.GetParentRow(this.Table.ParentRelations["FK_Дети_родители_Члены_профсоюза"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Дети_родители_Члены_профсоюза"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ДетиRow ДетиRow {
+                get {
+                    return ((ДетиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Дети_родители_Дети"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Дети_родители_Дети"]);
                 }
             }
         }
@@ -6849,12 +6463,12 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Материальная_выплатаRow Материальная_выплатаRow {
+            public Типы_заявленийRow Типы_заявленийRow {
                 get {
-                    return ((Материальная_выплатаRow)(this.GetParentRow(this.Table.ParentRelations["FK_Заявления_Материальная_выплата"])));
+                    return ((Типы_заявленийRow)(this.GetParentRow(this.Table.ParentRelations["FK_Заявления_Типы_заявлений"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Заявления_Материальная_выплата"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Заявления_Типы_заявлений"]);
                 }
             }
             
@@ -6871,12 +6485,12 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Типы_заявленийRow Типы_заявленийRow {
+            public Материальная_выплатаRow Материальная_выплатаRow {
                 get {
-                    return ((Типы_заявленийRow)(this.GetParentRow(this.Table.ParentRelations["FK_Заявления_Типы_заявлений"])));
+                    return ((Материальная_выплатаRow)(this.GetParentRow(this.Table.ParentRelations["FK_Заявления_Материальная_выплата"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Заявления_Типы_заявлений"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Заявления_Материальная_выплата"]);
                 }
             }
             
@@ -7059,23 +6673,23 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Общественные_организацииRow Общественные_организацииRow {
-                get {
-                    return ((Общественные_организацииRow)(this.GetParentRow(this.Table.ParentRelations["FK_ОО_ЧП_Общественные_организации"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_ОО_ЧП_Общественные_организации"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Члены_профсоюзаRow Члены_профсоюзаRow {
                 get {
                     return ((Члены_профсоюзаRow)(this.GetParentRow(this.Table.ParentRelations["FK_ОО_ЧП_Члены_профсоюза"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_ОО_ЧП_Члены_профсоюза"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Общественные_организацииRow Общественные_организацииRow {
+                get {
+                    return ((Общественные_организацииRow)(this.GetParentRow(this.Table.ParentRelations["FK_ОО_ЧП_Общественные_организации"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ОО_ЧП_Общественные_организации"]);
                 }
             }
         }
@@ -7275,23 +6889,6 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Текст_протокола {
-                get {
-                    try {
-                        return ((string)(this[this.tableПротоколы_заседаний.Текст_протоколаColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Текст_протокола\' в таблице \'Протоколы_заседаний\' равно DBNu" +
-                                "ll.", e);
-                    }
-                }
-                set {
-                    this[this.tableПротоколы_заседаний.Текст_протоколаColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsТема_заседанияNull() {
                 return this.IsNull(this.tableПротоколы_заседаний.Тема_заседанияColumn);
             }
@@ -7304,83 +6901,12 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsТекст_протоколаNull() {
-                return this.IsNull(this.tableПротоколы_заседаний.Текст_протоколаColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetТекст_протоколаNull() {
-                this[this.tableПротоколы_заседаний.Текст_протоколаColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ЗаявленияRow[] GetЗаявленияRows() {
                 if ((this.Table.ChildRelations["FK_Заявления_Протоколы_заседаний"] == null)) {
                     return new ЗаявленияRow[0];
                 }
                 else {
                     return ((ЗаявленияRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Заявления_Протоколы_заседаний"])));
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class ТелефоныRow : global::System.Data.DataRow {
-            
-            private ТелефоныDataTable tableТелефоны;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal ТелефоныRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableТелефоны = ((ТелефоныDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Код_номера {
-                get {
-                    return ((int)(this[this.tableТелефоны.Код_номераColumn]));
-                }
-                set {
-                    this[this.tableТелефоны.Код_номераColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Код_ЧП {
-                get {
-                    return ((int)(this[this.tableТелефоны.Код_ЧПColumn]));
-                }
-                set {
-                    this[this.tableТелефоны.Код_ЧПColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Номер_телефона {
-                get {
-                    return ((string)(this[this.tableТелефоны.Номер_телефонаColumn]));
-                }
-                set {
-                    this[this.tableТелефоны.Номер_телефонаColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Члены_профсоюзаRow Члены_профсоюзаRow {
-                get {
-                    return ((Члены_профсоюзаRow)(this.GetParentRow(this.Table.ParentRelations["FK_Телефоны_Члены_профсоюза"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Телефоны_Члены_профсоюза"]);
                 }
             }
         }
@@ -7484,118 +7010,36 @@ namespace Профсоюзная_база {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class AllPersonRow : global::System.Data.DataRow {
+        public partial class ТелефоныRow : global::System.Data.DataRow {
             
-            private AllPersonDataTable tableAllPerson;
+            private ТелефоныDataTable tableТелефоны;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal AllPersonRow(global::System.Data.DataRowBuilder rb) : 
+            internal ТелефоныRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableAllPerson = ((AllPersonDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Код_ЧП {
-                get {
-                    return ((int)(this[this.tableAllPerson.Код_ЧПColumn]));
-                }
-                set {
-                    this[this.tableAllPerson.Код_ЧПColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Фамилия {
-                get {
-                    return ((string)(this[this.tableAllPerson.ФамилияColumn]));
-                }
-                set {
-                    this[this.tableAllPerson.ФамилияColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Имя {
-                get {
-                    return ((string)(this[this.tableAllPerson.ИмяColumn]));
-                }
-                set {
-                    this[this.tableAllPerson.ИмяColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Отчество {
-                get {
-                    try {
-                        return ((string)(this[this.tableAllPerson.ОтчествоColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Отчество\' в таблице \'AllPerson\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableAllPerson.ОтчествоColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime Дата_рождения {
-                get {
-                    return ((global::System.DateTime)(this[this.tableAllPerson.Дата_рожденияColumn]));
-                }
-                set {
-                    this[this.tableAllPerson.Дата_рожденияColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Код_пола {
-                get {
-                    return ((int)(this[this.tableAllPerson.Код_полаColumn]));
-                }
-                set {
-                    this[this.tableAllPerson.Код_полаColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Код_должности {
-                get {
-                    return ((int)(this[this.tableAllPerson.Код_должностиColumn]));
-                }
-                set {
-                    this[this.tableAllPerson.Код_должностиColumn] = value;
-                }
+                this.tableТелефоны = ((ТелефоныDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int Код_номера {
                 get {
-                    return ((int)(this[this.tableAllPerson.Код_номераColumn]));
+                    return ((int)(this[this.tableТелефоны.Код_номераColumn]));
                 }
                 set {
-                    this[this.tableAllPerson.Код_номераColumn] = value;
+                    this[this.tableТелефоны.Код_номераColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Код_ЧП1 {
+            public int Код_ЧП {
                 get {
-                    return ((int)(this[this.tableAllPerson.Код_ЧП1Column]));
+                    return ((int)(this[this.tableТелефоны.Код_ЧПColumn]));
                 }
                 set {
-                    this[this.tableAllPerson.Код_ЧП1Column] = value;
+                    this[this.tableТелефоны.Код_ЧПColumn] = value;
                 }
             }
             
@@ -7604,104 +7048,37 @@ namespace Профсоюзная_база {
             public string Номер_телефона {
                 get {
                     try {
-                        return ((string)(this[this.tableAllPerson.Номер_телефонаColumn]));
+                        return ((string)(this[this.tableТелефоны.Номер_телефонаColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Номер_телефона\' в таблице \'AllPerson\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Номер_телефона\' в таблице \'Телефоны\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableAllPerson.Номер_телефонаColumn] = value;
+                    this[this.tableТелефоны.Номер_телефонаColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Код_должности1 {
-                get {
-                    return ((int)(this[this.tableAllPerson.Код_должности1Column]));
-                }
-                set {
-                    this[this.tableAllPerson.Код_должности1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Должность {
-                get {
-                    return ((string)(this[this.tableAllPerson.ДолжностьColumn]));
-                }
-                set {
-                    this[this.tableAllPerson.ДолжностьColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Код_пола1 {
-                get {
-                    return ((int)(this[this.tableAllPerson.Код_пола1Column]));
-                }
-                set {
-                    this[this.tableAllPerson.Код_пола1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Пол {
-                get {
-                    return ((string)(this[this.tableAllPerson.ПолColumn]));
-                }
-                set {
-                    this[this.tableAllPerson.ПолColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsОтчествоNull() {
-                return this.IsNull(this.tableAllPerson.ОтчествоColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetОтчествоNull() {
-                this[this.tableAllPerson.ОтчествоColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsНомер_телефонаNull() {
-                return this.IsNull(this.tableAllPerson.Номер_телефонаColumn);
+                return this.IsNull(this.tableТелефоны.Номер_телефонаColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetНомер_телефонаNull() {
-                this[this.tableAllPerson.Номер_телефонаColumn] = global::System.Convert.DBNull;
+                this[this.tableТелефоны.Номер_телефонаColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Члены_профсоюзаRow[] GetЧлены_профсоюзаRows() {
-                if ((this.Table.ChildRelations["FK_Члены_профсоюза_Гендер11"] == null)) {
+                if ((this.Table.ChildRelations["Телефоны_Члены_профсоюза"] == null)) {
                     return new Члены_профсоюзаRow[0];
                 }
                 else {
-                    return ((Члены_профсоюзаRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Члены_профсоюза_Гендер11"])));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ДетиRow[] GetДетиRows() {
-                if ((this.Table.ChildRelations["FK_Дети_Гендер1"] == null)) {
-                    return new ДетиRow[0];
-                }
-                else {
-                    return ((ДетиRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Дети_Гендер1"])));
+                    return ((Члены_профсоюзаRow[])(base.GetChildRows(this.Table.ChildRelations["Телефоны_Члены_профсоюза"])));
                 }
             }
         }
@@ -7709,25 +7086,36 @@ namespace Профсоюзная_база {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PhoneRow : global::System.Data.DataRow {
+        public partial class PersonRow : global::System.Data.DataRow {
             
-            private PhoneDataTable tablePhone;
+            private PersonDataTable tablePerson;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal PhoneRow(global::System.Data.DataRowBuilder rb) : 
+            internal PersonRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePhone = ((PhoneDataTable)(this.Table));
+                this.tablePerson = ((PersonDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int Код_ЧП {
+                get {
+                    return ((int)(this[this.tablePerson.Код_ЧПColumn]));
+                }
+                set {
+                    this[this.tablePerson.Код_ЧПColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Фамилия {
                 get {
-                    return ((string)(this[this.tablePhone.ФамилияColumn]));
+                    return ((string)(this[this.tablePerson.ФамилияColumn]));
                 }
                 set {
-                    this[this.tablePhone.ФамилияColumn] = value;
+                    this[this.tablePerson.ФамилияColumn] = value;
                 }
             }
             
@@ -7735,10 +7123,10 @@ namespace Профсоюзная_база {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Имя {
                 get {
-                    return ((string)(this[this.tablePhone.ИмяColumn]));
+                    return ((string)(this[this.tablePerson.ИмяColumn]));
                 }
                 set {
-                    this[this.tablePhone.ИмяColumn] = value;
+                    this[this.tablePerson.ИмяColumn] = value;
                 }
             }
             
@@ -7747,14 +7135,47 @@ namespace Профсоюзная_база {
             public string Отчество {
                 get {
                     try {
-                        return ((string)(this[this.tablePhone.ОтчествоColumn]));
+                        return ((string)(this[this.tablePerson.ОтчествоColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Отчество\' в таблице \'Phone\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Отчество\' в таблице \'Person\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePhone.ОтчествоColumn] = value;
+                    this[this.tablePerson.ОтчествоColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime Дата_рождения {
+                get {
+                    return ((global::System.DateTime)(this[this.tablePerson.Дата_рожденияColumn]));
+                }
+                set {
+                    this[this.tablePerson.Дата_рожденияColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Пол {
+                get {
+                    return ((string)(this[this.tablePerson.ПолColumn]));
+                }
+                set {
+                    this[this.tablePerson.ПолColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Должность {
+                get {
+                    return ((string)(this[this.tablePerson.ДолжностьColumn]));
+                }
+                set {
+                    this[this.tablePerson.ДолжностьColumn] = value;
                 }
             }
             
@@ -7763,39 +7184,50 @@ namespace Профсоюзная_база {
             public string Номер_телефона {
                 get {
                     try {
-                        return ((string)(this[this.tablePhone.Номер_телефонаColumn]));
+                        return ((string)(this[this.tablePerson.Номер_телефонаColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Номер_телефона\' в таблице \'Phone\' равно DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Номер_телефона\' в таблице \'Person\' равно DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePhone.Номер_телефонаColumn] = value;
+                    this[this.tablePerson.Номер_телефонаColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsОтчествоNull() {
-                return this.IsNull(this.tablePhone.ОтчествоColumn);
+                return this.IsNull(this.tablePerson.ОтчествоColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetОтчествоNull() {
-                this[this.tablePhone.ОтчествоColumn] = global::System.Convert.DBNull;
+                this[this.tablePerson.ОтчествоColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsНомер_телефонаNull() {
-                return this.IsNull(this.tablePhone.Номер_телефонаColumn);
+                return this.IsNull(this.tablePerson.Номер_телефонаColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetНомер_телефонаNull() {
-                this[this.tablePhone.Номер_телефонаColumn] = global::System.Convert.DBNull;
+                this[this.tablePerson.Номер_телефонаColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Члены_профсоюзаRow[] GetЧлены_профсоюзаRows() {
+                if ((this.Table.ChildRelations["FK_Person_Члены_профсоюза"] == null)) {
+                    return new Члены_профсоюзаRow[0];
+                }
+                else {
+                    return ((Члены_профсоюзаRow[])(base.GetChildRows(this.Table.ChildRelations["FK_Person_Члены_профсоюза"])));
+                }
             }
         }
         
@@ -8211,40 +7643,6 @@ namespace Профсоюзная_база {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class ТелефоныRowChangeEvent : global::System.EventArgs {
-            
-            private ТелефоныRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ТелефоныRowChangeEvent(ТелефоныRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ТелефоныRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public class Типы_заявленийRowChangeEvent : global::System.EventArgs {
             
             private Типы_заявленийRow eventRow;
@@ -8313,22 +7711,22 @@ namespace Профсоюзная_база {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class AllPersonRowChangeEvent : global::System.EventArgs {
+        public class ТелефоныRowChangeEvent : global::System.EventArgs {
             
-            private AllPersonRow eventRow;
+            private ТелефоныRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AllPersonRowChangeEvent(AllPersonRow row, global::System.Data.DataRowAction action) {
+            public ТелефоныRowChangeEvent(ТелефоныRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public AllPersonRow Row {
+            public ТелефоныRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -8347,22 +7745,22 @@ namespace Профсоюзная_база {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class PhoneRowChangeEvent : global::System.EventArgs {
+        public class PersonRowChangeEvent : global::System.EventArgs {
             
-            private PhoneRow eventRow;
+            private PersonRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PhoneRowChangeEvent(PhoneRow row, global::System.Data.DataRowAction action) {
+            public PersonRowChangeEvent(PersonRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public PhoneRow Row {
+            public PersonRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -12183,35 +11581,32 @@ SELECT Код_пользователя, Имя_пользователя, Лог�
             tableMapping.ColumnMappings.Add("Номер_протокола", "Номер_протокола");
             tableMapping.ColumnMappings.Add("Дата_протокола", "Дата_протокола");
             tableMapping.ColumnMappings.Add("Тема_заседания", "Тема_заседания");
-            tableMapping.ColumnMappings.Add("Текст_протокола", "Текст_протокола");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Протоколы_заседаний] WHERE (([Код_протокола] = @Original_Код_п" +
-                "ротокола) AND ([Номер_протокола] = @Original_Номер_протокола) AND ([Дата_протоко" +
-                "ла] = @Original_Дата_протокола))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [Протоколы_заседаний] WHERE (([Код_протокола] = @Original_Код_протоко" +
+                "ла) AND ([Номер_протокола] = @Original_Номер_протокола) AND ([Дата_протокола] = " +
+                "@Original_Дата_протокола))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_протокола", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код_протокола", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Номер_протокола", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер_протокола", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Дата_протокола", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата_протокола", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Протоколы_заседаний] ([Номер_протокола], [Дата_протокола], [Тема_заседания], [Текст_протокола]) VALUES (@Номер_протокола, @Дата_протокола, @Тема_заседания, @Текст_протокола);
-SELECT Код_протокола, Номер_протокола, Дата_протокола, Тема_заседания, Текст_протокола FROM Протоколы_заседаний WHERE (Код_протокола = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [Протоколы_заседаний] ([Номер_протокола], [Дата_протокола], [Тема_заседания]) VALUES (@Номер_протокола, @Дата_протокола, @Тема_заседания);
+SELECT Код_протокола, Номер_протокола, Дата_протокола, Тема_заседания FROM Протоколы_заседаний WHERE (Код_протокола = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Номер_протокола", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер_протокола", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дата_протокола", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата_протокола", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Тема_заседания", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тема_заседания", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Текст_протокола", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Текст_протокола", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Протоколы_заседаний] SET [Номер_протокола] = @Номер_протокола, [Дата_протокола] = @Дата_протокола, [Тема_заседания] = @Тема_заседания, [Текст_протокола] = @Текст_протокола WHERE (([Код_протокола] = @Original_Код_протокола) AND ([Номер_протокола] = @Original_Номер_протокола) AND ([Дата_протокола] = @Original_Дата_протокола));
-SELECT Код_протокола, Номер_протокола, Дата_протокола, Тема_заседания, Текст_протокола FROM Протоколы_заседаний WHERE (Код_протокола = @Код_протокола)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [Протоколы_заседаний] SET [Номер_протокола] = @Номер_протокола, [Дата_протокола] = @Дата_протокола, [Тема_заседания] = @Тема_заседания WHERE (([Код_протокола] = @Original_Код_протокола) AND ([Номер_протокола] = @Original_Номер_протокола) AND ([Дата_протокола] = @Original_Дата_протокола));
+SELECT Код_протокола, Номер_протокола, Дата_протокола, Тема_заседания FROM Протоколы_заседаний WHERE (Код_протокола = @Код_протокола)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Номер_протокола", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер_протокола", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Дата_протокола", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата_протокола", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Тема_заседания", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Тема_заседания", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Текст_протокола", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Текст_протокола", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_протокола", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код_протокола", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Номер_протокола", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер_протокола", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Дата_протокола", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Дата_протокола", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -12231,8 +11626,8 @@ SELECT Код_протокола, Номер_протокола, Дата_про
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Код_протокола, Номер_протокола, Дата_протокола, Тема_заседания, Текст_прот" +
-                "окола FROM dbo.Протоколы_заседаний";
+            this._commandCollection[0].CommandText = "SELECT Код_протокола, Номер_протокола, Дата_протокола, Тема_заседания FROM Проток" +
+                "олы_заседаний";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -12317,7 +11712,7 @@ SELECT Код_протокола, Номер_протокола, Дата_про
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Номер_протокола, System.DateTime Дата_протокола, string Тема_заседания, string Текст_протокола) {
+        public virtual int Insert(int Номер_протокола, System.DateTime Дата_протокола, string Тема_заседания) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Номер_протокола));
             this.Adapter.InsertCommand.Parameters[1].Value = ((System.DateTime)(Дата_протокола));
             if ((Тема_заседания == null)) {
@@ -12326,12 +11721,6 @@ SELECT Код_протокола, Номер_протокола, Дата_про
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Тема_заседания));
             }
-            if ((Текст_протокола == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Текст_протокола));
-            }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -12352,7 +11741,7 @@ SELECT Код_протокола, Номер_протокола, Дата_про
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Номер_протокола, System.DateTime Дата_протокола, string Тема_заседания, string Текст_протокола, int Original_Код_протокола, int Original_Номер_протокола, System.DateTime Original_Дата_протокола, int Код_протокола) {
+        public virtual int Update(int Номер_протокола, System.DateTime Дата_протокола, string Тема_заседания, int Original_Код_протокола, int Original_Номер_протокола, System.DateTime Original_Дата_протокола, int Код_протокола) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Номер_протокола));
             this.Adapter.UpdateCommand.Parameters[1].Value = ((System.DateTime)(Дата_протокола));
             if ((Тема_заседания == null)) {
@@ -12361,16 +11750,10 @@ SELECT Код_протокола, Номер_протокола, Дата_про
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Тема_заседания));
             }
-            if ((Текст_протокола == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Текст_протокола));
-            }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Код_протокола));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Номер_протокола));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((System.DateTime)(Original_Дата_протокола));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Код_протокола));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Код_протокола));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Номер_протокола));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Original_Дата_протокола));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Код_протокола));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -12391,335 +11774,8 @@ SELECT Код_протокола, Номер_протокола, Дата_про
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Номер_протокола, System.DateTime Дата_протокола, string Тема_заседания, string Текст_протокола, int Original_Код_протокола, int Original_Номер_протокола, System.DateTime Original_Дата_протокола) {
-            return this.Update(Номер_протокола, Дата_протокола, Тема_заседания, Текст_протокола, Original_Код_протокола, Original_Номер_протокола, Original_Дата_протокола, Original_Код_протокола);
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class ТелефоныTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
-        
-        private global::System.Data.SqlClient.SqlConnection _connection;
-        
-        private global::System.Data.SqlClient.SqlTransaction _transaction;
-        
-        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public ТелефоныTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::System.Data.SqlClient.SqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Телефоны";
-            tableMapping.ColumnMappings.Add("Код_номера", "Код_номера");
-            tableMapping.ColumnMappings.Add("Код_ЧП", "Код_ЧП");
-            tableMapping.ColumnMappings.Add("Номер_телефона", "Номер_телефона");
-            this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Телефоны] WHERE (([Код_номера] = @Original_Код_номера) AND ([К" +
-                "од_ЧП] = @Original_Код_ЧП) AND ([Номер_телефона] = @Original_Номер_телефона))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_номера", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код_номера", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_ЧП", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код_ЧП", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Номер_телефона", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер_телефона", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Телефоны] ([Код_ЧП], [Номер_телефона]) VALUES (@Код_ЧП, @Номер" +
-                "_телефона);\r\nSELECT Код_номера, Код_ЧП, Номер_телефона FROM Телефоны WHERE (Код_" +
-                "номера = SCOPE_IDENTITY())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_ЧП", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код_ЧП", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Номер_телефона", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер_телефона", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Телефоны] SET [Код_ЧП] = @Код_ЧП, [Номер_телефона] = @Номер_телефона WHERE (([Код_номера] = @Original_Код_номера) AND ([Код_ЧП] = @Original_Код_ЧП) AND ([Номер_телефона] = @Original_Номер_телефона));
-SELECT Код_номера, Код_ЧП, Номер_телефона FROM Телефоны WHERE (Код_номера = @Код_номера)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_ЧП", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код_ЧП", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Номер_телефона", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер_телефона", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_номера", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код_номера", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_ЧП", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код_ЧП", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Номер_телефона", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер_телефона", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_номера", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код_номера", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Профсоюзная_база.Properties.Settings.Default.Profcom_DBConnectionString1;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
-            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Код_номера, Код_ЧП, Номер_телефона FROM dbo.Телефоны";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.ТелефоныDataTable dataTable) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.ТелефоныDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.ТелефоныDataTable dataTable = new DataSet1.ТелефоныDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1.ТелефоныDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "Телефоны");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Код_номера, int Original_Код_ЧП, string Original_Номер_телефона) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Код_номера));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Код_ЧП));
-            if ((Original_Номер_телефона == null)) {
-                throw new global::System.ArgumentNullException("Original_Номер_телефона");
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_Номер_телефона));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int Код_ЧП, string Номер_телефона) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Код_ЧП));
-            if ((Номер_телефона == null)) {
-                throw new global::System.ArgumentNullException("Номер_телефона");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Номер_телефона));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Код_ЧП, string Номер_телефона, int Original_Код_номера, int Original_Код_ЧП, string Original_Номер_телефона, int Код_номера) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Код_ЧП));
-            if ((Номер_телефона == null)) {
-                throw new global::System.ArgumentNullException("Номер_телефона");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Номер_телефона));
-            }
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_Код_номера));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Код_ЧП));
-            if ((Original_Номер_телефона == null)) {
-                throw new global::System.ArgumentNullException("Original_Номер_телефона");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_Номер_телефона));
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Код_номера));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int Код_ЧП, string Номер_телефона, int Original_Код_номера, int Original_Код_ЧП, string Original_Номер_телефона) {
-            return this.Update(Код_ЧП, Номер_телефона, Original_Код_номера, Original_Код_ЧП, Original_Номер_телефона, Original_Код_номера);
+        public virtual int Update(int Номер_протокола, System.DateTime Дата_протокола, string Тема_заседания, int Original_Код_протокола, int Original_Номер_протокола, System.DateTime Original_Дата_протокола) {
+            return this.Update(Номер_протокола, Дата_протокола, Тема_заседания, Original_Код_протокола, Original_Номер_протокола, Original_Дата_протокола, Original_Код_протокола);
         }
     }
     
@@ -13354,7 +12410,7 @@ SELECT Код_типа_пользователя, Тип_пользователя
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class AllPersonTableAdapter : global::System.ComponentModel.Component {
+    public partial class ТелефоныTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -13368,7 +12424,7 @@ SELECT Код_типа_пользователя, Тип_пользователя
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public AllPersonTableAdapter() {
+        public ТелефоныTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -13465,29 +12521,48 @@ SELECT Код_типа_пользователя, Тип_пользователя
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "AllPerson";
-            tableMapping.ColumnMappings.Add("Код_ЧП", "Код_ЧП");
-            tableMapping.ColumnMappings.Add("Фамилия", "Фамилия");
-            tableMapping.ColumnMappings.Add("Имя", "Имя");
-            tableMapping.ColumnMappings.Add("Отчество", "Отчество");
-            tableMapping.ColumnMappings.Add("Дата_рождения", "Дата_рождения");
-            tableMapping.ColumnMappings.Add("Код_пола", "Код_пола");
-            tableMapping.ColumnMappings.Add("Код_должности", "Код_должности");
+            tableMapping.DataSetTable = "Телефоны";
             tableMapping.ColumnMappings.Add("Код_номера", "Код_номера");
-            tableMapping.ColumnMappings.Add("Код_ЧП1", "Код_ЧП1");
+            tableMapping.ColumnMappings.Add("Код_ЧП", "Код_ЧП");
             tableMapping.ColumnMappings.Add("Номер_телефона", "Номер_телефона");
-            tableMapping.ColumnMappings.Add("Код_должности1", "Код_должности1");
-            tableMapping.ColumnMappings.Add("Должность", "Должность");
-            tableMapping.ColumnMappings.Add("Код_пола1", "Код_пола1");
-            tableMapping.ColumnMappings.Add("Пол", "Пол");
             this._adapter.TableMappings.Add(tableMapping);
+            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.DeleteCommand.Connection = this.Connection;
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Телефоны] WHERE (([Код_номера] = @Original_Код_номера) AND ([К" +
+                "од_ЧП] = @Original_Код_ЧП) AND ((@IsNull_Номер_телефона = 1 AND [Номер_телефона]" +
+                " IS NULL) OR ([Номер_телефона] = @Original_Номер_телефона)))";
+            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_номера", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код_номера", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_ЧП", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код_ЧП", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Номер_телефона", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер_телефона", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Номер_телефона", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер_телефона", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.InsertCommand.Connection = this.Connection;
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[Телефоны] ([Код_ЧП], [Номер_телефона]) VALUES (@Код_ЧП, @Номер" +
+                "_телефона);\r\nSELECT Код_номера, Код_ЧП, Номер_телефона FROM Телефоны WHERE (Код_" +
+                "номера = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_ЧП", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код_ЧП", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Номер_телефона", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер_телефона", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
+            this._adapter.UpdateCommand.Connection = this.Connection;
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Телефоны] SET [Код_ЧП] = @Код_ЧП, [Номер_телефона] = @Номер_телефона WHERE (([Код_номера] = @Original_Код_номера) AND ([Код_ЧП] = @Original_Код_ЧП) AND ((@IsNull_Номер_телефона = 1 AND [Номер_телефона] IS NULL) OR ([Номер_телефона] = @Original_Номер_телефона)));
+SELECT Код_номера, Код_ЧП, Номер_телефона FROM Телефоны WHERE (Код_номера = @Код_номера)";
+            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_ЧП", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код_ЧП", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Номер_телефона", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер_телефона", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_номера", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код_номера", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Код_ЧП", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Код_ЧП", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Номер_телефона", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер_телефона", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Номер_телефона", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Номер_телефона", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Код_номера", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Код_номера", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Профсоюзная_база.Properties.Settings.Default.Profcom_DBConnectionString1;
+            this._connection.ConnectionString = global::Профсоюзная_база.Properties.Settings.Default.Profcom_DBConnectionString2;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13496,11 +12571,7 @@ SELECT Код_типа_пользователя, Тип_пользователя
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        Члены_профсоюза.*, Телефоны.*, Должности.*, Гендер.*
-FROM            Члены_профсоюза INNER JOIN
-                         Телефоны ON Члены_профсоюза.Код_ЧП = Телефоны.Код_ЧП INNER JOIN
-                         Должности ON Члены_профсоюза.Код_должности = Должности.Код_должности INNER JOIN
-                         Гендер ON Члены_профсоюза.Код_пола = Гендер.Код_пола";
+            this._commandCollection[0].CommandText = "SELECT Код_номера, Код_ЧП, Номер_телефона FROM dbo.Телефоны";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -13508,7 +12579,7 @@ FROM            Члены_профсоюза INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.AllPersonDataTable dataTable) {
+        public virtual int Fill(DataSet1.ТелефоныDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -13521,11 +12592,146 @@ FROM            Члены_профсоюза INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.AllPersonDataTable GetData() {
+        public virtual DataSet1.ТелефоныDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.AllPersonDataTable dataTable = new DataSet1.AllPersonDataTable();
+            DataSet1.ТелефоныDataTable dataTable = new DataSet1.ТелефоныDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1.ТелефоныDataTable dataTable) {
+            return this.Adapter.Update(dataTable);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DataSet1 dataSet) {
+            return this.Adapter.Update(dataSet, "Телефоны");
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow dataRow) {
+            return this.Adapter.Update(new global::System.Data.DataRow[] {
+                        dataRow});
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(global::System.Data.DataRow[] dataRows) {
+            return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
+        public virtual int Delete(int Original_Код_номера, int Original_Код_ЧП, string Original_Номер_телефона) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Код_номера));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Код_ЧП));
+            if ((Original_Номер_телефона == null)) {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[2].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(Original_Номер_телефона));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
+            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.DeleteCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.DeleteCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(int Код_ЧП, string Номер_телефона) {
+            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(Код_ЧП));
+            if ((Номер_телефона == null)) {
+                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(Номер_телефона));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int Код_ЧП, string Номер_телефона, int Original_Код_номера, int Original_Код_ЧП, string Original_Номер_телефона, int Код_номера) {
+            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(Код_ЧП));
+            if ((Номер_телефона == null)) {
+                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(Номер_телефона));
+            }
+            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Original_Код_номера));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_Код_ЧП));
+            if ((Original_Номер_телефона == null)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Номер_телефона));
+            }
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Код_номера));
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
+            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.UpdateCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.UpdateCommand.Connection.Close();
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
+        public virtual int Update(int Код_ЧП, string Номер_телефона, int Original_Код_номера, int Original_Код_ЧП, string Original_Номер_телефона) {
+            return this.Update(Код_ЧП, Номер_телефона, Original_Код_номера, Original_Код_ЧП, Original_Номер_телефона, Original_Код_номера);
         }
     }
     
@@ -13538,7 +12744,7 @@ FROM            Члены_профсоюза INNER JOIN
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PhoneTableAdapter : global::System.ComponentModel.Component {
+    public partial class PersonTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -13552,7 +12758,7 @@ FROM            Члены_профсоюза INNER JOIN
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public PhoneTableAdapter() {
+        public PersonTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -13649,10 +12855,14 @@ FROM            Члены_профсоюза INNER JOIN
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Phone";
+            tableMapping.DataSetTable = "Person";
+            tableMapping.ColumnMappings.Add("Код_ЧП", "Код_ЧП");
             tableMapping.ColumnMappings.Add("Фамилия", "Фамилия");
             tableMapping.ColumnMappings.Add("Имя", "Имя");
             tableMapping.ColumnMappings.Add("Отчество", "Отчество");
+            tableMapping.ColumnMappings.Add("Дата_рождения", "Дата_рождения");
+            tableMapping.ColumnMappings.Add("Пол", "Пол");
+            tableMapping.ColumnMappings.Add("Должность", "Должность");
             tableMapping.ColumnMappings.Add("Номер_телефона", "Номер_телефона");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -13670,9 +12880,12 @@ FROM            Члены_профсоюза INNER JOIN
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        Члены_профсоюза.Фамилия, Члены_профсоюза.Имя, Члены_профсоюза.Отчес" +
-                "тво, Телефоны.Номер_телефона\r\nFROM            Члены_профсоюза INNER JOIN\r\n      " +
-                "                   Телефоны ON Члены_профсоюза.Код_ЧП = Телефоны.Код_ЧП";
+            this._commandCollection[0].CommandText = @"SELECT        Члены_профсоюза.Код_ЧП, Члены_профсоюза.Фамилия, Члены_профсоюза.Имя, Члены_профсоюза.Отчество, Члены_профсоюза.Дата_рождения, Гендер.Пол, Должности.Должность, 
+                         Телефоны.Номер_телефона
+FROM            Гендер INNER JOIN
+                         Члены_профсоюза ON Гендер.Код_пола = Члены_профсоюза.Код_пола INNER JOIN
+                         Должности ON Члены_профсоюза.Код_должности = Должности.Код_должности INNER JOIN
+                         Телефоны ON Члены_профсоюза.Код_ЧП = Телефоны.Код_ЧП";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -13680,7 +12893,7 @@ FROM            Члены_профсоюза INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.PhoneDataTable dataTable) {
+        public virtual int Fill(DataSet1.PersonDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -13693,9 +12906,9 @@ FROM            Члены_профсоюза INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSet1.PhoneDataTable GetData() {
+        public virtual DataSet1.PersonDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DataSet1.PhoneDataTable dataTable = new DataSet1.PhoneDataTable();
+            DataSet1.PersonDataTable dataTable = new DataSet1.PersonDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -13737,11 +12950,11 @@ FROM            Члены_профсоюза INNER JOIN
         
         private Протоколы_заседанийTableAdapter _протоколы_заседанийTableAdapter;
         
-        private ТелефоныTableAdapter _телефоныTableAdapter;
-        
         private Типы_заявленийTableAdapter _типы_заявленийTableAdapter;
         
         private Типы_пользователяTableAdapter _типы_пользователяTableAdapter;
+        
+        private ТелефоныTableAdapter _телефоныTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -13931,20 +13144,6 @@ FROM            Члены_профсоюза INNER JOIN
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public ТелефоныTableAdapter ТелефоныTableAdapter {
-            get {
-                return this._телефоныTableAdapter;
-            }
-            set {
-                this._телефоныTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
         public Типы_заявленийTableAdapter Типы_заявленийTableAdapter {
             get {
                 return this._типы_заявленийTableAdapter;
@@ -13965,6 +13164,20 @@ FROM            Члены_профсоюза INNER JOIN
             }
             set {
                 this._типы_пользователяTableAdapter = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
+            "a", "System.Drawing.Design.UITypeEditor")]
+        public ТелефоныTableAdapter ТелефоныTableAdapter {
+            get {
+                return this._телефоныTableAdapter;
+            }
+            set {
+                this._телефоныTableAdapter = value;
             }
         }
         
@@ -14035,10 +13248,6 @@ FROM            Члены_профсоюза INNER JOIN
                             && (this._протоколы_заседанийTableAdapter.Connection != null))) {
                     return this._протоколы_заседанийTableAdapter.Connection;
                 }
-                if (((this._телефоныTableAdapter != null) 
-                            && (this._телефоныTableAdapter.Connection != null))) {
-                    return this._телефоныTableAdapter.Connection;
-                }
                 if (((this._типы_заявленийTableAdapter != null) 
                             && (this._типы_заявленийTableAdapter.Connection != null))) {
                     return this._типы_заявленийTableAdapter.Connection;
@@ -14046,6 +13255,10 @@ FROM            Члены_профсоюза INNER JOIN
                 if (((this._типы_пользователяTableAdapter != null) 
                             && (this._типы_пользователяTableAdapter.Connection != null))) {
                     return this._типы_пользователяTableAdapter.Connection;
+                }
+                if (((this._телефоныTableAdapter != null) 
+                            && (this._телефоныTableAdapter.Connection != null))) {
+                    return this._телефоныTableAdapter.Connection;
                 }
                 return null;
             }
@@ -14096,13 +13309,13 @@ FROM            Члены_профсоюза INNER JOIN
                 if ((this._протоколы_заседанийTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._телефоныTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 if ((this._типы_заявленийTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._типы_пользователяTableAdapter != null)) {
+                    count = (count + 1);
+                }
+                if ((this._телефоныTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -14125,12 +13338,30 @@ FROM            Члены_профсоюза INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
+            if ((this._должностиTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Должности.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._должностиTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
             if ((this._основания_МПTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Основания_МП.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._основания_МПTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._телефоныTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Телефоны.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._телефоныTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -14149,33 +13380,6 @@ FROM            Члены_профсоюза INNER JOIN
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._детиTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._типы_пользователяTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Типы_пользователя.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._типы_пользователяTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._должностиTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Должности.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._должностиTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._типы_заявленийTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Типы_заявлений.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._типы_заявленийTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -14206,21 +13410,30 @@ FROM            Члены_профсоюза INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._телефоныTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Телефоны.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._типы_заявленийTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Типы_заявлений.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._телефоныTableAdapter.Update(updatedRows));
+                    result = (result + this._типы_заявленийTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._оО_ЧПTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ОО_ЧП.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._типы_пользователяTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Типы_пользователя.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._оО_ЧПTableAdapter.Update(updatedRows));
+                    result = (result + this._типы_пользователяTableAdapter.Update(updatedRows));
+                    allChangedRows.AddRange(updatedRows);
+                }
+            }
+            if ((this._дети_родителиTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.Дети_родители.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
+                if (((updatedRows != null) 
+                            && (0 < updatedRows.Length))) {
+                    result = (result + this._дети_родителиTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -14233,12 +13446,12 @@ FROM            Члены_профсоюза INNER JOIN
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._дети_родителиTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Дети_родители.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._оО_ЧПTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.ОО_ЧП.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._дети_родителиTableAdapter.Update(updatedRows));
+                    result = (result + this._оО_ЧПTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -14269,11 +13482,27 @@ FROM            Члены_профсоюза INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
+            if ((this._должностиTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Должности.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._должностиTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
             if ((this._основания_МПTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Основания_МП.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._основания_МПTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._телефоныTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Телефоны.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._телефоныTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -14290,30 +13519,6 @@ FROM            Члены_профсоюза INNER JOIN
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
                     result = (result + this._детиTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._типы_пользователяTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Типы_пользователя.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._типы_пользователяTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._должностиTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Должности.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._должностиTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
-            if ((this._типы_заявленийTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Типы_заявлений.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._типы_заявленийTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -14341,19 +13546,27 @@ FROM            Члены_профсоюза INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._телефоныTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Телефоны.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._типы_заявленийTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Типы_заявлений.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._телефоныTableAdapter.Update(addedRows));
+                    result = (result + this._типы_заявленийTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._оО_ЧПTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ОО_ЧП.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._типы_пользователяTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Типы_пользователя.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._оО_ЧПTableAdapter.Update(addedRows));
+                    result = (result + this._типы_пользователяTableAdapter.Update(addedRows));
+                    allAddedRows.AddRange(addedRows);
+                }
+            }
+            if ((this._дети_родителиTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.Дети_родители.Select(null, null, global::System.Data.DataViewRowState.Added);
+                if (((addedRows != null) 
+                            && (0 < addedRows.Length))) {
+                    result = (result + this._дети_родителиTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -14365,11 +13578,11 @@ FROM            Члены_профсоюза INNER JOIN
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._дети_родителиTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Дети_родители.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._оО_ЧПTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.ОО_ЧП.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._дети_родителиTableAdapter.Update(addedRows));
+                    result = (result + this._оО_ЧПTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -14399,11 +13612,11 @@ FROM            Члены_профсоюза INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._дети_родителиTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Дети_родители.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._оО_ЧПTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.ОО_ЧП.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._дети_родителиTableAdapter.Update(deletedRows));
+                    result = (result + this._оО_ЧПTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -14415,19 +13628,27 @@ FROM            Члены_профсоюза INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._оО_ЧПTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ОО_ЧП.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._дети_родителиTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Дети_родители.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._оО_ЧПTableAdapter.Update(deletedRows));
+                    result = (result + this._дети_родителиTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._телефоныTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Телефоны.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._типы_пользователяTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Типы_пользователя.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._телефоныTableAdapter.Update(deletedRows));
+                    result = (result + this._типы_пользователяTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._типы_заявленийTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Типы_заявлений.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._типы_заявленийTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -14455,30 +13676,6 @@ FROM            Члены_профсоюза INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._типы_заявленийTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Типы_заявлений.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._типы_заявленийTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._должностиTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Должности.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._должностиTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._типы_пользователяTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Типы_пользователя.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._типы_пользователяTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             if ((this._детиTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Дети.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
@@ -14495,11 +13692,27 @@ FROM            Члены_профсоюза INNER JOIN
                     allChangedRows.AddRange(deletedRows);
                 }
             }
+            if ((this._телефоныTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Телефоны.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._телефоныTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
             if ((this._основания_МПTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Основания_МП.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._основания_МПTableAdapter.Update(deletedRows));
+                    allChangedRows.AddRange(deletedRows);
+                }
+            }
+            if ((this._должностиTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.Должности.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+                if (((deletedRows != null) 
+                            && (0 < deletedRows.Length))) {
+                    result = (result + this._должностиTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -14610,11 +13823,6 @@ FROM            Члены_профсоюза INNER JOIN
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
-            if (((this._телефоныTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._телефоныTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
-                        "r, должны использовать одинаковую строку подключения.");
-            }
             if (((this._типы_заявленийTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._типы_заявленийTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
@@ -14622,6 +13830,11 @@ FROM            Члены_профсоюза INNER JOIN
             }
             if (((this._типы_пользователяTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._типы_пользователяTableAdapter.Connection) == false))) {
+                throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
+                        "r, должны использовать одинаковую строку подключения.");
+            }
+            if (((this._телефоныTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._телефоныTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("Все адаптеры таблицы, управляемые диспетчером адаптера таблицы TableAdapterManage" +
                         "r, должны использовать одинаковую строку подключения.");
             }
@@ -14765,15 +13978,6 @@ FROM            Члены_профсоюза INNER JOIN
                         adaptersWithAcceptChangesDuringUpdate.Add(this._протоколы_заседанийTableAdapter.Adapter);
                     }
                 }
-                if ((this._телефоныTableAdapter != null)) {
-                    revertConnections.Add(this._телефоныTableAdapter, this._телефоныTableAdapter.Connection);
-                    this._телефоныTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._телефоныTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._телефоныTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._телефоныTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._телефоныTableAdapter.Adapter);
-                    }
-                }
                 if ((this._типы_заявленийTableAdapter != null)) {
                     revertConnections.Add(this._типы_заявленийTableAdapter, this._типы_заявленийTableAdapter.Connection);
                     this._типы_заявленийTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
@@ -14790,6 +13994,15 @@ FROM            Члены_профсоюза INNER JOIN
                     if (this._типы_пользователяTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._типы_пользователяTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._типы_пользователяTableAdapter.Adapter);
+                    }
+                }
+                if ((this._телефоныTableAdapter != null)) {
+                    revertConnections.Add(this._телефоныTableAdapter, this._телефоныTableAdapter.Connection);
+                    this._телефоныTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._телефоныTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._телефоныTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._телефоныTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._телефоныTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -14898,10 +14111,6 @@ FROM            Члены_профсоюза INNER JOIN
                     this._протоколы_заседанийTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._протоколы_заседанийTableAdapter]));
                     this._протоколы_заседанийTableAdapter.Transaction = null;
                 }
-                if ((this._телефоныTableAdapter != null)) {
-                    this._телефоныTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._телефоныTableAdapter]));
-                    this._телефоныTableAdapter.Transaction = null;
-                }
                 if ((this._типы_заявленийTableAdapter != null)) {
                     this._типы_заявленийTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._типы_заявленийTableAdapter]));
                     this._типы_заявленийTableAdapter.Transaction = null;
@@ -14909,6 +14118,10 @@ FROM            Члены_профсоюза INNER JOIN
                 if ((this._типы_пользователяTableAdapter != null)) {
                     this._типы_пользователяTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._типы_пользователяTableAdapter]));
                     this._типы_пользователяTableAdapter.Transaction = null;
+                }
+                if ((this._телефоныTableAdapter != null)) {
+                    this._телефоныTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._телефоныTableAdapter]));
+                    this._телефоныTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

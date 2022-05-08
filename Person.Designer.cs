@@ -36,9 +36,9 @@ namespace Профсоюзная_база
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.членыпрофсоюзаBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new Профсоюзная_база.DataSet1();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -47,8 +47,12 @@ namespace Профсоюзная_база
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripAdd = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.гендерBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.должностиBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.создатьРезервнуюКопиюToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -75,33 +79,32 @@ namespace Профсоюзная_база
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.инструкцияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.членыпрофсоюзаBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new Профсоюзная_база.DataSet1();
-            this.гендерBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.должностиBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.allPersonBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.телефоныBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.члены_профсоюзаTableAdapter = new Профсоюзная_база.DataSet1TableAdapters.Члены_профсоюзаTableAdapter();
             this.гендерTableAdapter = new Профсоюзная_база.DataSet1TableAdapters.ГендерTableAdapter();
             this.должностиTableAdapter = new Профсоюзная_база.DataSet1TableAdapters.ДолжностиTableAdapter();
-            this.allPersonTableAdapter = new Профсоюзная_база.DataSet1TableAdapters.AllPersonTableAdapter();
+            this.телефоныTableAdapter = new Профсоюзная_база.DataSet1TableAdapters.ТелефоныTableAdapter();
+            this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.personTableAdapter = new Профсоюзная_база.DataSet1TableAdapters.PersonTableAdapter();
             this.кодЧПDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.отчествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.датарожденияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.кодполаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.коддолжностиDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.Номер_телефона = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.полDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.должностьDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.номертелефонаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.членыпрофсоюзаBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.гендерBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.должностиBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.allPersonBindingSource)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.телефоныBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -112,15 +115,15 @@ namespace Профсоюзная_база
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(944, 511);
+            this.panel1.Size = new System.Drawing.Size(894, 511);
             this.panel1.TabIndex = 18;
             // 
             // bindingNavigator1
             // 
-            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bindingNavigator1.AddNewItem = null;
             this.bindingNavigator1.BindingSource = this.членыпрофсоюзаBindingSource;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -132,9 +135,9 @@ namespace Профсоюзная_база
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.toolStripButton1});
+            this.toolStripAdd,
+            this.toolStripButton1,
+            this.toolStripButton2});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 24);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -142,19 +145,19 @@ namespace Профсоюзная_база
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(944, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(894, 25);
             this.bindingNavigator1.TabIndex = 2;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
-            // bindingNavigatorAddNewItem
+            // членыпрофсоюзаBindingSource
             // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Добавить";
-            this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
+            this.членыпрофсоюзаBindingSource.DataMember = "Члены_профсоюза";
+            this.членыпрофсоюзаBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -162,16 +165,6 @@ namespace Профсоюзная_база
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(43, 22);
             this.bindingNavigatorCountItem.Text = "для {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Общее число элементов";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Удалить";
-            this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -234,6 +227,16 @@ namespace Профсоюзная_база
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripAdd
+            // 
+            this.toolStripAdd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripAdd.Image = ((System.Drawing.Image)(resources.GetObject("toolStripAdd.Image")));
+            this.toolStripAdd.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripAdd.Name = "toolStripAdd";
+            this.toolStripAdd.Size = new System.Drawing.Size(23, 22);
+            this.toolStripAdd.Text = "toolStripAdd";
+            this.toolStripAdd.Click += new System.EventHandler(this.toolStripAdd_Click);
+            // 
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -242,7 +245,16 @@ namespace Профсоюзная_база
             this.toolStripButton1.Name = "toolStripButton1";
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "Save";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripSave_Click);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton2.Image = global::Профсоюзная_база.Properties.Resources.Edit_icon;
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton2.Text = "toolStripButton2";
             // 
             // dataGridView1
             // 
@@ -266,10 +278,10 @@ namespace Профсоюзная_база
             this.имяDataGridViewTextBoxColumn,
             this.отчествоDataGridViewTextBoxColumn,
             this.датарожденияDataGridViewTextBoxColumn,
-            this.кодполаDataGridViewTextBoxColumn,
-            this.коддолжностиDataGridViewTextBoxColumn,
-            this.Номер_телефона});
-            this.dataGridView1.DataSource = this.allPersonBindingSource;
+            this.полDataGridViewTextBoxColumn,
+            this.должностьDataGridViewTextBoxColumn,
+            this.номертелефонаDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.personBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -289,9 +301,19 @@ namespace Профсоюзная_база
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Size = new System.Drawing.Size(938, 456);
+            this.dataGridView1.Size = new System.Drawing.Size(888, 456);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.dataGridView1_UserDeletingRow);
+            // 
+            // гендерBindingSource
+            // 
+            this.гендерBindingSource.DataMember = "Гендер";
+            this.гендерBindingSource.DataSource = this.dataSet1;
+            // 
+            // должностиBindingSource
+            // 
+            this.должностиBindingSource.DataMember = "Должности";
+            this.должностиBindingSource.DataSource = this.dataSet1;
             // 
             // menuStrip1
             // 
@@ -303,7 +325,7 @@ namespace Профсоюзная_база
             this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(944, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(894, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -485,30 +507,10 @@ namespace Профсоюзная_база
             this.инструкцияToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.инструкцияToolStripMenuItem.Text = "Инструкция";
             // 
-            // членыпрофсоюзаBindingSource
+            // телефоныBindingSource
             // 
-            this.членыпрофсоюзаBindingSource.DataMember = "Члены_профсоюза";
-            this.членыпрофсоюзаBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // гендерBindingSource
-            // 
-            this.гендерBindingSource.DataMember = "Гендер";
-            this.гендерBindingSource.DataSource = this.dataSet1;
-            // 
-            // должностиBindingSource
-            // 
-            this.должностиBindingSource.DataMember = "Должности";
-            this.должностиBindingSource.DataSource = this.dataSet1;
-            // 
-            // allPersonBindingSource
-            // 
-            this.allPersonBindingSource.DataMember = "AllPerson";
-            this.allPersonBindingSource.DataSource = this.dataSet1;
+            this.телефоныBindingSource.DataMember = "Телефоны";
+            this.телефоныBindingSource.DataSource = this.dataSet1;
             // 
             // члены_профсоюзаTableAdapter
             // 
@@ -522,9 +524,18 @@ namespace Профсоюзная_база
             // 
             this.должностиTableAdapter.ClearBeforeFill = true;
             // 
-            // allPersonTableAdapter
+            // телефоныTableAdapter
             // 
-            this.allPersonTableAdapter.ClearBeforeFill = true;
+            this.телефоныTableAdapter.ClearBeforeFill = true;
+            // 
+            // personBindingSource
+            // 
+            this.personBindingSource.DataMember = "Person";
+            this.personBindingSource.DataSource = this.dataSet1;
+            // 
+            // personTableAdapter
+            // 
+            this.personTableAdapter.ClearBeforeFill = true;
             // 
             // кодЧПDataGridViewTextBoxColumn
             // 
@@ -532,7 +543,6 @@ namespace Профсоюзная_база
             this.кодЧПDataGridViewTextBoxColumn.HeaderText = "Номер";
             this.кодЧПDataGridViewTextBoxColumn.Name = "кодЧПDataGridViewTextBoxColumn";
             this.кодЧПDataGridViewTextBoxColumn.ReadOnly = true;
-            this.кодЧПDataGridViewTextBoxColumn.Width = 50;
             // 
             // фамилияDataGridViewTextBoxColumn
             // 
@@ -540,7 +550,6 @@ namespace Профсоюзная_база
             this.фамилияDataGridViewTextBoxColumn.HeaderText = "Фамилия";
             this.фамилияDataGridViewTextBoxColumn.Name = "фамилияDataGridViewTextBoxColumn";
             this.фамилияDataGridViewTextBoxColumn.ReadOnly = true;
-            this.фамилияDataGridViewTextBoxColumn.Width = 120;
             // 
             // имяDataGridViewTextBoxColumn
             // 
@@ -548,7 +557,6 @@ namespace Профсоюзная_база
             this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
             this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
             this.имяDataGridViewTextBoxColumn.ReadOnly = true;
-            this.имяDataGridViewTextBoxColumn.Width = 120;
             // 
             // отчествоDataGridViewTextBoxColumn
             // 
@@ -556,7 +564,6 @@ namespace Профсоюзная_база
             this.отчествоDataGridViewTextBoxColumn.HeaderText = "Отчество";
             this.отчествоDataGridViewTextBoxColumn.Name = "отчествоDataGridViewTextBoxColumn";
             this.отчествоDataGridViewTextBoxColumn.ReadOnly = true;
-            this.отчествоDataGridViewTextBoxColumn.Width = 120;
             // 
             // датарожденияDataGridViewTextBoxColumn
             // 
@@ -565,44 +572,32 @@ namespace Профсоюзная_база
             this.датарожденияDataGridViewTextBoxColumn.Name = "датарожденияDataGridViewTextBoxColumn";
             this.датарожденияDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // кодполаDataGridViewTextBoxColumn
+            // полDataGridViewTextBoxColumn
             // 
-            this.кодполаDataGridViewTextBoxColumn.DataPropertyName = "Код_пола";
-            this.кодполаDataGridViewTextBoxColumn.DataSource = this.гендерBindingSource;
-            this.кодполаDataGridViewTextBoxColumn.DisplayMember = "Пол";
-            this.кодполаDataGridViewTextBoxColumn.HeaderText = "Пол";
-            this.кодполаDataGridViewTextBoxColumn.Name = "кодполаDataGridViewTextBoxColumn";
-            this.кодполаDataGridViewTextBoxColumn.ReadOnly = true;
-            this.кодполаDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.кодполаDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.кодполаDataGridViewTextBoxColumn.ValueMember = "Код_пола";
+            this.полDataGridViewTextBoxColumn.DataPropertyName = "Пол";
+            this.полDataGridViewTextBoxColumn.HeaderText = "Пол";
+            this.полDataGridViewTextBoxColumn.Name = "полDataGridViewTextBoxColumn";
+            this.полDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // коддолжностиDataGridViewTextBoxColumn
+            // должностьDataGridViewTextBoxColumn
             // 
-            this.коддолжностиDataGridViewTextBoxColumn.DataPropertyName = "Код_должности";
-            this.коддолжностиDataGridViewTextBoxColumn.DataSource = this.должностиBindingSource;
-            this.коддолжностиDataGridViewTextBoxColumn.DisplayMember = "Должность";
-            this.коддолжностиDataGridViewTextBoxColumn.HeaderText = "Должность";
-            this.коддолжностиDataGridViewTextBoxColumn.Name = "коддолжностиDataGridViewTextBoxColumn";
-            this.коддолжностиDataGridViewTextBoxColumn.ReadOnly = true;
-            this.коддолжностиDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.коддолжностиDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.коддолжностиDataGridViewTextBoxColumn.ValueMember = "Код_должности";
-            this.коддолжностиDataGridViewTextBoxColumn.Width = 150;
+            this.должностьDataGridViewTextBoxColumn.DataPropertyName = "Должность";
+            this.должностьDataGridViewTextBoxColumn.HeaderText = "Должность";
+            this.должностьDataGridViewTextBoxColumn.Name = "должностьDataGridViewTextBoxColumn";
+            this.должностьDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // Номер_телефона
+            // номертелефонаDataGridViewTextBoxColumn
             // 
-            this.Номер_телефона.DataPropertyName = "Номер_телефона";
-            this.Номер_телефона.HeaderText = "Номер_телефона";
-            this.Номер_телефона.Name = "Номер_телефона";
-            this.Номер_телефона.ReadOnly = true;
-            this.Номер_телефона.Width = 130;
+            this.номертелефонаDataGridViewTextBoxColumn.DataPropertyName = "Номер_телефона";
+            this.номертелефонаDataGridViewTextBoxColumn.HeaderText = "Номер_телефона";
+            this.номертелефонаDataGridViewTextBoxColumn.Name = "номертелефонаDataGridViewTextBoxColumn";
+            this.номертелефонаDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Person
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(944, 511);
+            this.ClientSize = new System.Drawing.Size(894, 511);
             this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(910, 550);
@@ -614,26 +609,24 @@ namespace Профсоюзная_база
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.членыпрофсоюзаBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.гендерBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.должностиBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.allPersonBindingSource)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.телефоныBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -642,13 +635,6 @@ namespace Профсоюзная_база
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private DataSet1 dataSet1;
-        private System.Windows.Forms.BindingSource членыпрофсоюзаBindingSource;
-        private DataSet1TableAdapters.Члены_профсоюзаTableAdapter члены_профсоюзаTableAdapter;
-        private System.Windows.Forms.BindingSource гендерBindingSource;
-        private DataSet1TableAdapters.ГендерTableAdapter гендерTableAdapter;
-        private System.Windows.Forms.BindingSource должностиBindingSource;
-        private DataSet1TableAdapters.ДолжностиTableAdapter должностиTableAdapter;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem создатьРезервнуюКопиюToolStripMenuItem;
@@ -675,16 +661,28 @@ namespace Профсоюзная_база
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem инструкцияToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem номераТелефоновToolStripMenuItem;
-        private System.Windows.Forms.BindingSource allPersonBindingSource;
-        private DataSet1TableAdapters.AllPersonTableAdapter allPersonTableAdapter;
+        public DataSet1 dataSet1;
+        public System.Windows.Forms.BindingSource гендерBindingSource;
+        public DataSet1TableAdapters.ГендерTableAdapter гендерTableAdapter;
+        public System.Windows.Forms.BindingSource должностиBindingSource;
+        public DataSet1TableAdapters.ДолжностиTableAdapter должностиTableAdapter;
+        public System.Windows.Forms.DataGridView dataGridView1;
+        public DataSet1TableAdapters.Члены_профсоюзаTableAdapter члены_профсоюзаTableAdapter;
+        private System.Windows.Forms.BindingSource телефоныBindingSource;
+        public DataSet1TableAdapters.ТелефоныTableAdapter телефоныTableAdapter;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        public System.Windows.Forms.BindingSource членыпрофсоюзаBindingSource;
+        private System.Windows.Forms.ToolStripButton toolStripAdd;
+        private System.Windows.Forms.BindingSource personBindingSource;
+        private DataSet1TableAdapters.PersonTableAdapter personTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn кодЧПDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn отчествоDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn датарожденияDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn кодполаDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn коддолжностиDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Номер_телефона;
+        private System.Windows.Forms.DataGridViewTextBoxColumn полDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn должностьDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn номертелефонаDataGridViewTextBoxColumn;
     }
 }
 

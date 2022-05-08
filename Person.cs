@@ -20,8 +20,10 @@ namespace Профсоюзная_база
 
         public void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet1.AllPerson". При необходимости она может быть перемещена или удалена.
-            this.allPersonTableAdapter.Fill(this.dataSet1.AllPerson);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet1.Person". При необходимости она может быть перемещена или удалена.
+            this.personTableAdapter.Fill(this.dataSet1.Person);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet1.Телефоны". При необходимости она может быть перемещена или удалена.
+            this.телефоныTableAdapter.Fill(this.dataSet1.Телефоны);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet1.Должности". При необходимости она может быть перемещена или удалена.
             this.должностиTableAdapter.Fill(this.dataSet1.Должности);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet1.Гендер". При необходимости она может быть перемещена или удалена.
@@ -31,13 +33,6 @@ namespace Профсоюзная_база
 
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.членыпрофсоюзаBindingSource.EndEdit();
-            this.члены_профсоюзаTableAdapter.Update(this.dataSet1);
-        }
-
         private void номераТелефоновToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Phone af = new Phone();
@@ -45,25 +40,28 @@ namespace Профсоюзная_база
             af.Show();
         }
 
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        public void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Вы уверены, что хотите удалить данного сотрудника?", "Удаление", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (dr == DialogResult.Cancel)
+            {
+                e.Cancel = true;
+            }
+            dataGridView1.Refresh();
+        }
+
+        private void toolStripAdd_Click(object sender, EventArgs e)
         {
             AddPerson af = new AddPerson();
             af.Owner = this;
             af.Show();
         }
 
-        private void bindingNavigatorDeleteItem_Click(object sender, EventArgs e)
+        private void toolStripSave_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Удалить запись?", "Удаление", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-        }
-
-        private void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
-        {
-            DialogResult dr = MessageBox.Show("Удалить запись?", "Удаление", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-            if (dr == DialogResult.Cancel)
-            {
-                e.Cancel = true;
-            }
+            this.Validate();
+            this.членыпрофсоюзаBindingSource.EndEdit();
+            this.члены_профсоюзаTableAdapter.Update(this.dataSet1);
         }
     }
 }
