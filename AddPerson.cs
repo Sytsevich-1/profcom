@@ -52,8 +52,19 @@ namespace Профсоюзная_база
                 SqlCommand phoneadd = new SqlCommand(
                     $"INSERT INTO [Телефоны] (Код_ЧП, Номер_телефона) VALUES (N'{a}', N'{textBox4.Text}')", con);
                 phoneadd.ExecuteNonQuery();
-            }
+                }
             con.Close();
+
+                Person main = new Person();
+                Person obj = (Person)Application.OpenForms["Person"];
+                obj.loaddata();
+                main.dataGridView1.Update();
+                main.dataGridView1.Refresh();
+                MessageBox.Show("Сотрудник добавлен");
+                textBox1.Clear();
+                textBox2.Clear();
+                textBox3.Clear();
+                textBox4.Clear();
             }
             catch (Exception ex)
             {

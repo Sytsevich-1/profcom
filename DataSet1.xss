@@ -23,6 +23,22 @@
     <Shape ID="DesignTable:Телефоны" ZOrder="14" X="392" Y="1909" Height="134" Width="207" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="83" />
   </Shapes>
   <Connectors>
+    <Connector ID="DesignRelation:FK_Члены_профсоюза_Должности1" ZOrder="11" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>400</X>
+          <Y>927</Y>
+        </Point>
+        <Point>
+          <X>297</X>
+          <Y>927</Y>
+        </Point>
+        <Point>
+          <X>297</X>
+          <Y>280</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
     <Connector ID="DesignRelation:FK_Дети_родители_Дети" ZOrder="13" LineWidth="11">
       <RoutePoints>
         <Point>
@@ -55,50 +71,6 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:FK_Дети_Гендер" ZOrder="15" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>587</X>
-          <Y>127</Y>
-        </Point>
-        <Point>
-          <X>657</X>
-          <Y>127</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK_Заявления_Члены_профсоюза" ZOrder="10" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>289</X>
-          <Y>280</Y>
-        </Point>
-        <Point>
-          <X>289</X>
-          <Y>1112</Y>
-        </Point>
-        <Point>
-          <X>400</X>
-          <Y>1112</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK_Члены_профсоюза_Должности1" ZOrder="11" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>400</X>
-          <Y>927</Y>
-        </Point>
-        <Point>
-          <X>297</X>
-          <Y>927</Y>
-        </Point>
-        <Point>
-          <X>297</X>
-          <Y>280</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
     <Connector ID="DesignRelation:FK_Заявления_Материальная_выплата" ZOrder="9" LineWidth="11">
       <RoutePoints>
         <Point>
@@ -108,18 +80,6 @@
         <Point>
           <X>609</X>
           <Y>1162</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK_Материальная_выплата_Основания_МП" ZOrder="8" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>1038</X>
-          <Y>1152</Y>
-        </Point>
-        <Point>
-          <X>968</X>
-          <Y>1152</Y>
         </Point>
       </RoutePoints>
     </Connector>
@@ -155,6 +115,18 @@
         </Point>
       </RoutePoints>
     </Connector>
+    <Connector ID="DesignRelation:FK_Материальная_выплата_Основания_МП" ZOrder="8" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>1038</X>
+          <Y>1152</Y>
+        </Point>
+        <Point>
+          <X>968</X>
+          <Y>1152</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
     <Connector ID="DesignRelation:FK_ОО_ЧП_Общественные_организации" ZOrder="5" LineWidth="11">
       <RoutePoints>
         <Point>
@@ -183,7 +155,59 @@
         </Point>
       </RoutePoints>
     </Connector>
-    <Connector ID="DesignRelation:Телефоны_Члены_профсоюза" ZOrder="3" LineWidth="11">
+    <Connector ID="DesignRelation:FK_Пользователи_Типы_пользователя" ZOrder="3" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>1646</X>
+          <Y>127</Y>
+        </Point>
+        <Point>
+          <X>1576</X>
+          <Y>127</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
+    <Connector ID="DesignRelation:FK_Дети_Гендер" ZOrder="15" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>587</X>
+          <Y>127</Y>
+        </Point>
+        <Point>
+          <X>657</X>
+          <Y>127</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
+    <Connector ID="DesignRelation:FK_Заявления_Члены_профсоюза" ZOrder="10" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>289</X>
+          <Y>280</Y>
+        </Point>
+        <Point>
+          <X>289</X>
+          <Y>1112</Y>
+        </Point>
+        <Point>
+          <X>400</X>
+          <Y>1112</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
+    <Connector ID="DesignRelation:FK_Члены_профсоюза_Гендер1" ZOrder="2" LineWidth="11">
+      <RoutePoints>
+        <Point>
+          <X>400</X>
+          <Y>127</Y>
+        </Point>
+        <Point>
+          <X>330</X>
+          <Y>127</Y>
+        </Point>
+      </RoutePoints>
+    </Connector>
+    <Connector ID="DesignRelation:Телефоны_Члены_профсоюза" ZOrder="1" LineWidth="11">
       <RoutePoints>
         <Point>
           <X>392</X>
@@ -196,30 +220,6 @@
         <Point>
           <X>221</X>
           <Y>280</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK_Пользователи_Типы_пользователя" ZOrder="2" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>1646</X>
-          <Y>127</Y>
-        </Point>
-        <Point>
-          <X>1576</X>
-          <Y>127</Y>
-        </Point>
-      </RoutePoints>
-    </Connector>
-    <Connector ID="DesignRelation:FK_Члены_профсоюза_Гендер1" ZOrder="1" LineWidth="11">
-      <RoutePoints>
-        <Point>
-          <X>400</X>
-          <Y>127</Y>
-        </Point>
-        <Point>
-          <X>330</X>
-          <Y>127</Y>
         </Point>
       </RoutePoints>
     </Connector>

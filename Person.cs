@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Профсоюзная_база
 {
@@ -16,12 +17,24 @@ namespace Профсоюзная_база
         {
             InitializeComponent();
         }
+        public SqlConnection con;
+        public SqlCommand com;
+        public string conString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Maks\\Документы\\Университет\\2 курс\\2 семестр\\БД\\Профсоюзная база\\Profcom_DB.mdf;Integrated Security=True;Connect Timeout=30;User Instance=False";
 
-
+        public void load()
+        {
+            string script = "Select * from Члены_профсоюза";
+            con = new SqlConnection(conString);
+            con.Open();
+            SqlDataAdapter ms_data = new SqlDataAdapter(script, conString);
+            DataTable table = new DataTable();
+            ms_data.Fill(table);
+            dataGridView1.DataSource = table;
+            con.Close();
+        }
         public void Form1_Load(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet1.Person". При необходимости она может быть перемещена или удалена.
-            this.personTableAdapter.Fill(this.dataSet1.Person);
+            load();
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet1.Телефоны". При необходимости она может быть перемещена или удалена.
             this.телефоныTableAdapter.Fill(this.dataSet1.Телефоны);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet1.Должности". При необходимости она может быть перемещена или удалена.
@@ -30,7 +43,13 @@ namespace Профсоюзная_база
             this.гендерTableAdapter.Fill(this.dataSet1.Гендер);
             // TODO: данная строка кода позволяет загрузить данные в таблицу "dataSet1.Члены_профсоюза". При необходимости она может быть перемещена или удалена.
             this.члены_профсоюзаTableAdapter.Fill(this.dataSet1.Члены_профсоюза);
+        }
 
+        public void loaddata()
+        {
+            load();
+            //this.члены_профсоюзаTableAdapter.Fill(this.dataSet1.Члены_профсоюза);
+            //this.personTableAdapter.Fill(this.dataSet1.Person);
         }
 
         private void номераТелефоновToolStripMenuItem_Click(object sender, EventArgs e)
@@ -57,7 +76,7 @@ namespace Профсоюзная_база
             af.Show();
         }
 
-        private void toolStripSave_Click(object sender, EventArgs e)
+        private void toolStripButton1_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.членыпрофсоюзаBindingSource.EndEdit();
