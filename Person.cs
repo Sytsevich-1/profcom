@@ -125,5 +125,47 @@ namespace Профсоюзная_база
             public static string Col7 { get; set; }
 
         }
+
+        private void должностиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Positions af = new Positions();
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void общественныеОрганизацииToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Public_org af = new Public_org();
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void типыЗаявленийToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Types_of_app af = new Types_of_app();
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void основанияВыплатToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Payments af = new Payments();
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void создатьРезервнуюКопиюToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Backup af = new Backup();
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void восстановитьИзРезервнойКопииToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Restore af = new Restore();
+            af.Owner = this;
+            af.Show();
+        }
     }
 }

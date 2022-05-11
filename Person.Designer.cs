@@ -67,6 +67,8 @@ namespace Профсоюзная_база
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.инструкцияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.заявленияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.выплатыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
@@ -221,12 +223,14 @@ namespace Профсоюзная_база
             this.создатьРезервнуюКопиюToolStripMenuItem.Name = "создатьРезервнуюКопиюToolStripMenuItem";
             this.создатьРезервнуюКопиюToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
             this.создатьРезервнуюКопиюToolStripMenuItem.Text = "Создать резервную копию";
+            this.создатьРезервнуюКопиюToolStripMenuItem.Click += new System.EventHandler(this.создатьРезервнуюКопиюToolStripMenuItem_Click);
             // 
             // восстановитьИзРезервнойКопииToolStripMenuItem
             // 
             this.восстановитьИзРезервнойКопииToolStripMenuItem.Name = "восстановитьИзРезервнойКопииToolStripMenuItem";
             this.восстановитьИзРезервнойКопииToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
             this.восстановитьИзРезервнойКопииToolStripMenuItem.Text = "Восстановить из резервной копии";
+            this.восстановитьИзРезервнойКопииToolStripMenuItem.Click += new System.EventHandler(this.восстановитьИзРезервнойКопииToolStripMenuItem_Click);
             // 
             // выходToolStripMenuItem
             // 
@@ -267,16 +271,19 @@ namespace Профсоюзная_база
             this.общественныеОрганизацииToolStripMenuItem.Name = "общественныеОрганизацииToolStripMenuItem";
             this.общественныеОрганизацииToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.общественныеОрганизацииToolStripMenuItem.Text = "Общественные организации";
+            this.общественныеОрганизацииToolStripMenuItem.Click += new System.EventHandler(this.общественныеОрганизацииToolStripMenuItem_Click);
             // 
             // должностиToolStripMenuItem
             // 
             this.должностиToolStripMenuItem.Name = "должностиToolStripMenuItem";
             this.должностиToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
             this.должностиToolStripMenuItem.Text = "Должности";
+            this.должностиToolStripMenuItem.Click += new System.EventHandler(this.должностиToolStripMenuItem_Click);
             // 
             // заявленияСотрудниковToolStripMenuItem
             // 
             this.заявленияСотрудниковToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.заявленияToolStripMenuItem,
             this.типыЗаявленийToolStripMenuItem});
             this.заявленияСотрудниковToolStripMenuItem.Name = "заявленияСотрудниковToolStripMenuItem";
             this.заявленияСотрудниковToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
@@ -287,10 +294,12 @@ namespace Профсоюзная_база
             this.типыЗаявленийToolStripMenuItem.Name = "типыЗаявленийToolStripMenuItem";
             this.типыЗаявленийToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.типыЗаявленийToolStripMenuItem.Text = "Типы заявлений";
+            this.типыЗаявленийToolStripMenuItem.Click += new System.EventHandler(this.типыЗаявленийToolStripMenuItem_Click);
             // 
             // материальныеВыплатыToolStripMenuItem
             // 
             this.материальныеВыплатыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.выплатыToolStripMenuItem,
             this.основанияВыплатToolStripMenuItem});
             this.материальныеВыплатыToolStripMenuItem.Name = "материальныеВыплатыToolStripMenuItem";
             this.материальныеВыплатыToolStripMenuItem.Size = new System.Drawing.Size(233, 22);
@@ -301,6 +310,7 @@ namespace Профсоюзная_база
             this.основанияВыплатToolStripMenuItem.Name = "основанияВыплатToolStripMenuItem";
             this.основанияВыплатToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.основанияВыплатToolStripMenuItem.Text = "Основания выплат";
+            this.основанияВыплатToolStripMenuItem.Click += new System.EventHandler(this.основанияВыплатToolStripMenuItem_Click);
             // 
             // протоколыЗаседенийToolStripMenuItem
             // 
@@ -377,6 +387,18 @@ namespace Профсоюзная_база
             this.инструкцияToolStripMenuItem.Name = "инструкцияToolStripMenuItem";
             this.инструкцияToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.инструкцияToolStripMenuItem.Text = "Инструкция";
+            // 
+            // заявленияToolStripMenuItem
+            // 
+            this.заявленияToolStripMenuItem.Name = "заявленияToolStripMenuItem";
+            this.заявленияToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.заявленияToolStripMenuItem.Text = "Заявления";
+            // 
+            // выплатыToolStripMenuItem
+            // 
+            this.выплатыToolStripMenuItem.Name = "выплатыToolStripMenuItem";
+            this.выплатыToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.выплатыToolStripMenuItem.Text = "Выплаты";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -508,6 +530,8 @@ namespace Профсоюзная_база
         private System.Windows.Forms.ToolStripMenuItem справкаToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem инструкцияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem заявленияToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem выплатыToolStripMenuItem;
     }
 }
 
