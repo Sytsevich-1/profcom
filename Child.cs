@@ -11,13 +11,11 @@ using System.Data.SqlClient;
 
 namespace Профсоюзная_база
 {
-    public partial class Person : Form
+    public partial class Child : Form
     {
-        public Person()
+        public Child()
         {
             InitializeComponent();
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-
         }
         public SqlConnection con;
         public SqlCommand com;
@@ -25,16 +23,22 @@ namespace Профсоюзная_база
 
         public void load()
         {
-            string script = "SELECT Члены_профсоюза.Код_ЧП, Члены_профсоюза.Фамилия, Члены_профсоюза.Имя, Члены_профсоюза.Отчество, Члены_профсоюза.Дата_рождения, Гендер.Пол, Должности.Должность," +
-                         "Телефоны.Номер_телефона FROM Гендер INNER JOIN Члены_профсоюза ON Гендер.Код_пола = Члены_профсоюза.Код_пола INNER JOIN Должности ON Члены_профсоюза.Код_должности = Должности.Код_должности INNER JOIN " +
-                         "Телефоны ON Члены_профсоюза.Код_ЧП = Телефоны.Код_ЧП";
+            string script = "SELECT Члены_профсоюза.Код_ЧП, Члены_профсоюза.Фамилия, Члены_профсоюза.Имя, Члены_профсоюза.Отчество, Дети.Фамилия AS Expr1, Дети.Имя AS Expr2, Дети.Отчество AS Expr3, Дети.Дата_рождения,"+
+                         "Гендер.Пол FROM Гендер INNER JOIN Дети ON Гендер.Код_пола = Дети.Код_пола INNER JOIN Члены_профсоюза ON Гендер.Код_пола = Члены_профсоюза.Код_пола INNER JOIN "+
+                         "Дети_родители ON Дети.Код_дети = Дети_родители.Код_дети AND Члены_профсоюза.Код_ЧП = Дети_родители.Код_ЧП";
             con = new SqlConnection(conString);
             con.Open();
             SqlDataAdapter ms_data = new SqlDataAdapter(script, conString);
             DataTable table = new DataTable();
             ms_data.Fill(table);
             dataGridView1.DataSource = table;
-            dataGridView1.Columns[0].HeaderText = "Номер";
+            dataGridView1.Columns[0].HeaderText = "Номер_родителя";
+            dataGridView1.Columns[1].HeaderText = "Фамилия_род";
+            dataGridView1.Columns[2].HeaderText = "Имя_род";
+            dataGridView1.Columns[3].HeaderText = "Отчество_род";
+            dataGridView1.Columns[4].HeaderText = "Фамилия_реб";
+            dataGridView1.Columns[5].HeaderText = "Имя_реб";
+            dataGridView1.Columns[6].HeaderText = "Отчество_реб";
             con.Close();
         }
         public void del()
@@ -57,7 +61,6 @@ namespace Профсоюзная_база
                 MessageBox.Show("Выберите запись для удаления", "Удаление записи", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-       
         public void Form1_Load(object sender, EventArgs e)
         {
             load();
@@ -70,9 +73,9 @@ namespace Профсоюзная_база
 
         private void toolStripAdd_Click(object sender, EventArgs e)
         {
-            AddPerson af = new AddPerson();
-            af.Owner = this;
-            af.Show();
+            //AddChild af = new AddChild();
+            //af.Owner = this;
+            //af.Show();
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
@@ -81,49 +84,11 @@ namespace Профсоюзная_база
             load();
         }
 
-        private void пользователиToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void пользователиToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Users af = new Users();
             af.Owner = this;
             af.Show();
-        }
-
-        private void детиСотрудниковToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Child af = new Child();
-            af.Owner = this;
-            af.Show();
-        }
-
-        public void toolStripButton2_Click(object sender, EventArgs e)
-        {
-            var curruentRow = dataGridView1.CurrentCell.RowIndex;
-            DataGridViewRow selectedRow = dataGridView1.Rows[curruentRow];
-
-            GridValues.Col0 = selectedRow.Cells[0].Value.ToString();
-            GridValues.Col1 = selectedRow.Cells[1].Value.ToString();
-            GridValues.Col2 = selectedRow.Cells[2].Value.ToString();
-            GridValues.Col3 = selectedRow.Cells[3].Value.ToString();
-            GridValues.Col4 = (DateTime)selectedRow.Cells[4].Value;
-            GridValues.Col5 = selectedRow.Cells[5].Value.ToString();
-            GridValues.Col6 = selectedRow.Cells[6].Value.ToString();
-            GridValues.Col7 = selectedRow.Cells[7].Value.ToString();
-
-            EditPerson af = new EditPerson();
-            af.Owner = this;
-            af.Show();
-        }
-        public static class GridValues
-        {
-            public static string Col0 { get; set; }
-            public static string Col1 { get; set; }
-            public static string Col2 { get; set; }
-            public static string Col3 { get; set; }
-            public static DateTime Col4 { get; set; }
-            public static string Col5 { get; set; }
-            public static string Col6 { get; set; }
-            public static string Col7 { get; set; }
-
         }
     }
 }

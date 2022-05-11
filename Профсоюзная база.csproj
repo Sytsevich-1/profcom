@@ -77,28 +77,46 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Child.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Child.Designer.cs">
+      <DependentUpon>Child.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPerson.Designer.cs">
+      <DependentUpon>EditPerson.cs</DependentUpon>
+    </Compile>
     <Compile Include="Person.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Person.Designer.cs">
       <DependentUpon>Person.cs</DependentUpon>
     </Compile>
-    <Compile Include="Phone.cs">
+    <Compile Include="Users.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Phone.Designer.cs">
-      <DependentUpon>Phone.cs</DependentUpon>
+    <Compile Include="Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddPerson.resx">
       <DependentUpon>AddPerson.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Child.resx">
+      <DependentUpon>Child.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditPerson.resx">
+      <DependentUpon>EditPerson.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Person.resx">
       <DependentUpon>Person.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Phone.resx">
-      <DependentUpon>Phone.cs</DependentUpon>
+    <EmbeddedResource Include="Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -152,6 +170,7 @@
     <None Include="img\logout-icon.png" />
     <None Include="img\save.png" />
     <None Include="img\Edit-icon.png" />
+    <None Include="img\delete-icon.png" />
     <Content Include="Profcom_DB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

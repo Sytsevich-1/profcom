@@ -57,9 +57,7 @@ namespace Профсоюзная_база
 
                 Person main = new Person();
                 Person obj = (Person)Application.OpenForms["Person"];
-                obj.loaddata();
-                main.dataGridView1.Update();
-                main.dataGridView1.Refresh();
+                obj.load();
                 MessageBox.Show("Сотрудник добавлен");
                 textBox1.Clear();
                 textBox2.Clear();
