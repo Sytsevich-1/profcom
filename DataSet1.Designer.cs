@@ -54,25 +54,25 @@ namespace Профсоюзная_база {
         
         private ТелефоныDataTable tableТелефоны;
         
-        private global::System.Data.DataRelation relationТелефоны_Члены_профсоюза;
-        
         private global::System.Data.DataRelation relationFK_Члены_профсоюза_Должности1;
+        
+        private global::System.Data.DataRelation relationТелефоны_Члены_профсоюза;
         
         private global::System.Data.DataRelation relationFK_Дети_родители_Члены_профсоюза;
         
         private global::System.Data.DataRelation relationFK_Дети_родители_Дети;
         
-        private global::System.Data.DataRelation relationFK_Заявления_Типы_заявлений;
+        private global::System.Data.DataRelation relationFK_Заявления_Материальная_выплата;
         
         private global::System.Data.DataRelation relationFK_Заявления_Протоколы_заседаний;
         
-        private global::System.Data.DataRelation relationFK_Заявления_Материальная_выплата;
+        private global::System.Data.DataRelation relationFK_Заявления_Типы_заявлений;
         
         private global::System.Data.DataRelation relationFK_Материальная_выплата_Основания_МП;
         
-        private global::System.Data.DataRelation relationFK_ОО_ЧП_Члены_профсоюза;
-        
         private global::System.Data.DataRelation relationFK_ОО_ЧП_Общественные_организации;
+        
+        private global::System.Data.DataRelation relationFK_ОО_ЧП_Члены_профсоюза;
         
         private global::System.Data.DataRelation relationFK_Пользователи_Типы_пользователя;
         
@@ -558,16 +558,16 @@ namespace Профсоюзная_база {
                     this.tableТелефоны.InitVars();
                 }
             }
-            this.relationТелефоны_Члены_профсоюза = this.Relations["Телефоны_Члены_профсоюза"];
             this.relationFK_Члены_профсоюза_Должности1 = this.Relations["FK_Члены_профсоюза_Должности1"];
+            this.relationТелефоны_Члены_профсоюза = this.Relations["Телефоны_Члены_профсоюза"];
             this.relationFK_Дети_родители_Члены_профсоюза = this.Relations["FK_Дети_родители_Члены_профсоюза"];
             this.relationFK_Дети_родители_Дети = this.Relations["FK_Дети_родители_Дети"];
-            this.relationFK_Заявления_Типы_заявлений = this.Relations["FK_Заявления_Типы_заявлений"];
-            this.relationFK_Заявления_Протоколы_заседаний = this.Relations["FK_Заявления_Протоколы_заседаний"];
             this.relationFK_Заявления_Материальная_выплата = this.Relations["FK_Заявления_Материальная_выплата"];
+            this.relationFK_Заявления_Протоколы_заседаний = this.Relations["FK_Заявления_Протоколы_заседаний"];
+            this.relationFK_Заявления_Типы_заявлений = this.Relations["FK_Заявления_Типы_заявлений"];
             this.relationFK_Материальная_выплата_Основания_МП = this.Relations["FK_Материальная_выплата_Основания_МП"];
-            this.relationFK_ОО_ЧП_Члены_профсоюза = this.Relations["FK_ОО_ЧП_Члены_профсоюза"];
             this.relationFK_ОО_ЧП_Общественные_организации = this.Relations["FK_ОО_ЧП_Общественные_организации"];
+            this.relationFK_ОО_ЧП_Члены_профсоюза = this.Relations["FK_ОО_ЧП_Члены_профсоюза"];
             this.relationFK_Пользователи_Типы_пользователя = this.Relations["FK_Пользователи_Типы_пользователя"];
             this.relationFK_Дети_Гендер = this.Relations["FK_Дети_Гендер"];
             this.relationFK_Заявления_Члены_профсоюза = this.Relations["FK_Заявления_Члены_профсоюза"];
@@ -613,19 +613,19 @@ namespace Профсоюзная_база {
             this.tableТелефоны = new ТелефоныDataTable();
             base.Tables.Add(this.tableТелефоны);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("Телефоны_Члены_профсоюза", new global::System.Data.DataColumn[] {
-                        this.tableТелефоны.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
-                        this.tableЧлены_профсоюза.Код_ЧПColumn});
-            this.tableЧлены_профсоюза.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.Cascade;
-            fkc.DeleteRule = global::System.Data.Rule.Cascade;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_Члены_профсоюза_Должности1", new global::System.Data.DataColumn[] {
                         this.tableДолжности.Код_должностиColumn}, new global::System.Data.DataColumn[] {
                         this.tableЧлены_профсоюза.Код_должностиColumn});
             this.tableЧлены_профсоюза.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("Телефоны_Члены_профсоюза", new global::System.Data.DataColumn[] {
+                        this.tableТелефоны.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЧлены_профсоюза.Код_ЧПColumn});
+            this.tableЧлены_профсоюза.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.Cascade;
+            fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
             fkc = new global::System.Data.ForeignKeyConstraint("FK_Дети_родители_Члены_профсоюза", new global::System.Data.DataColumn[] {
                         this.tableЧлены_профсоюза.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
@@ -641,9 +641,9 @@ namespace Профсоюзная_база {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.Cascade;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Заявления_Типы_заявлений", new global::System.Data.DataColumn[] {
-                        this.tableТипы_заявлений.Код_ТЗColumn}, new global::System.Data.DataColumn[] {
-                        this.tableЗаявления.Код_ТЗColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Заявления_Материальная_выплата", new global::System.Data.DataColumn[] {
+                        this.tableМатериальная_выплата.Код_МПColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЗаявления.Код_МПColumn});
             this.tableЗаявления.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -655,9 +655,9 @@ namespace Профсоюзная_база {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_Заявления_Материальная_выплата", new global::System.Data.DataColumn[] {
-                        this.tableМатериальная_выплата.Код_МПColumn}, new global::System.Data.DataColumn[] {
-                        this.tableЗаявления.Код_МПColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_Заявления_Типы_заявлений", new global::System.Data.DataColumn[] {
+                        this.tableТипы_заявлений.Код_ТЗColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЗаявления.Код_ТЗColumn});
             this.tableЗаявления.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -669,16 +669,16 @@ namespace Профсоюзная_база {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_ОО_ЧП_Члены_профсоюза", new global::System.Data.DataColumn[] {
-                        this.tableЧлены_профсоюза.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
-                        this.tableОО_ЧП.Код_ЧПColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_ОО_ЧП_Общественные_организации", new global::System.Data.DataColumn[] {
+                        this.tableОбщественные_организации.Код_ООColumn}, new global::System.Data.DataColumn[] {
+                        this.tableОО_ЧП.Код_ООColumn});
             this.tableОО_ЧП.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK_ОО_ЧП_Общественные_организации", new global::System.Data.DataColumn[] {
-                        this.tableОбщественные_организации.Код_ООColumn}, new global::System.Data.DataColumn[] {
-                        this.tableОО_ЧП.Код_ООColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK_ОО_ЧП_Члены_профсоюза", new global::System.Data.DataColumn[] {
+                        this.tableЧлены_профсоюза.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
+                        this.tableОО_ЧП.Код_ЧПColumn});
             this.tableОО_ЧП.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.Cascade;
@@ -690,14 +690,14 @@ namespace Профсоюзная_база {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            this.relationТелефоны_Члены_профсоюза = new global::System.Data.DataRelation("Телефоны_Члены_профсоюза", new global::System.Data.DataColumn[] {
-                        this.tableТелефоны.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
-                        this.tableЧлены_профсоюза.Код_ЧПColumn}, false);
-            this.Relations.Add(this.relationТелефоны_Члены_профсоюза);
             this.relationFK_Члены_профсоюза_Должности1 = new global::System.Data.DataRelation("FK_Члены_профсоюза_Должности1", new global::System.Data.DataColumn[] {
                         this.tableДолжности.Код_должностиColumn}, new global::System.Data.DataColumn[] {
                         this.tableЧлены_профсоюза.Код_должностиColumn}, false);
             this.Relations.Add(this.relationFK_Члены_профсоюза_Должности1);
+            this.relationТелефоны_Члены_профсоюза = new global::System.Data.DataRelation("Телефоны_Члены_профсоюза", new global::System.Data.DataColumn[] {
+                        this.tableТелефоны.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЧлены_профсоюза.Код_ЧПColumn}, false);
+            this.Relations.Add(this.relationТелефоны_Члены_профсоюза);
             this.relationFK_Дети_родители_Члены_профсоюза = new global::System.Data.DataRelation("FK_Дети_родители_Члены_профсоюза", new global::System.Data.DataColumn[] {
                         this.tableЧлены_профсоюза.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
                         this.tableДети_родители.Код_ЧПColumn}, false);
@@ -706,30 +706,30 @@ namespace Профсоюзная_база {
                         this.tableДети.Код_детиColumn}, new global::System.Data.DataColumn[] {
                         this.tableДети_родители.Код_детиColumn}, false);
             this.Relations.Add(this.relationFK_Дети_родители_Дети);
-            this.relationFK_Заявления_Типы_заявлений = new global::System.Data.DataRelation("FK_Заявления_Типы_заявлений", new global::System.Data.DataColumn[] {
-                        this.tableТипы_заявлений.Код_ТЗColumn}, new global::System.Data.DataColumn[] {
-                        this.tableЗаявления.Код_ТЗColumn}, false);
-            this.Relations.Add(this.relationFK_Заявления_Типы_заявлений);
-            this.relationFK_Заявления_Протоколы_заседаний = new global::System.Data.DataRelation("FK_Заявления_Протоколы_заседаний", new global::System.Data.DataColumn[] {
-                        this.tableПротоколы_заседаний.Код_протоколаColumn}, new global::System.Data.DataColumn[] {
-                        this.tableЗаявления.Код_протоколаColumn}, false);
-            this.Relations.Add(this.relationFK_Заявления_Протоколы_заседаний);
             this.relationFK_Заявления_Материальная_выплата = new global::System.Data.DataRelation("FK_Заявления_Материальная_выплата", new global::System.Data.DataColumn[] {
                         this.tableМатериальная_выплата.Код_МПColumn}, new global::System.Data.DataColumn[] {
                         this.tableЗаявления.Код_МПColumn}, false);
             this.Relations.Add(this.relationFK_Заявления_Материальная_выплата);
+            this.relationFK_Заявления_Протоколы_заседаний = new global::System.Data.DataRelation("FK_Заявления_Протоколы_заседаний", new global::System.Data.DataColumn[] {
+                        this.tableПротоколы_заседаний.Код_протоколаColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЗаявления.Код_протоколаColumn}, false);
+            this.Relations.Add(this.relationFK_Заявления_Протоколы_заседаний);
+            this.relationFK_Заявления_Типы_заявлений = new global::System.Data.DataRelation("FK_Заявления_Типы_заявлений", new global::System.Data.DataColumn[] {
+                        this.tableТипы_заявлений.Код_ТЗColumn}, new global::System.Data.DataColumn[] {
+                        this.tableЗаявления.Код_ТЗColumn}, false);
+            this.Relations.Add(this.relationFK_Заявления_Типы_заявлений);
             this.relationFK_Материальная_выплата_Основания_МП = new global::System.Data.DataRelation("FK_Материальная_выплата_Основания_МП", new global::System.Data.DataColumn[] {
                         this.tableОснования_МП.Код_основанияColumn}, new global::System.Data.DataColumn[] {
                         this.tableМатериальная_выплата.Код_основанияColumn}, false);
             this.Relations.Add(this.relationFK_Материальная_выплата_Основания_МП);
-            this.relationFK_ОО_ЧП_Члены_профсоюза = new global::System.Data.DataRelation("FK_ОО_ЧП_Члены_профсоюза", new global::System.Data.DataColumn[] {
-                        this.tableЧлены_профсоюза.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
-                        this.tableОО_ЧП.Код_ЧПColumn}, false);
-            this.Relations.Add(this.relationFK_ОО_ЧП_Члены_профсоюза);
             this.relationFK_ОО_ЧП_Общественные_организации = new global::System.Data.DataRelation("FK_ОО_ЧП_Общественные_организации", new global::System.Data.DataColumn[] {
                         this.tableОбщественные_организации.Код_ООColumn}, new global::System.Data.DataColumn[] {
                         this.tableОО_ЧП.Код_ООColumn}, false);
             this.Relations.Add(this.relationFK_ОО_ЧП_Общественные_организации);
+            this.relationFK_ОО_ЧП_Члены_профсоюза = new global::System.Data.DataRelation("FK_ОО_ЧП_Члены_профсоюза", new global::System.Data.DataColumn[] {
+                        this.tableЧлены_профсоюза.Код_ЧПColumn}, new global::System.Data.DataColumn[] {
+                        this.tableОО_ЧП.Код_ЧПColumn}, false);
+            this.Relations.Add(this.relationFK_ОО_ЧП_Члены_профсоюза);
             this.relationFK_Пользователи_Типы_пользователя = new global::System.Data.DataRelation("FK_Пользователи_Типы_пользователя", new global::System.Data.DataColumn[] {
                         this.tableТипы_пользователя.Код_типа_пользователяColumn}, new global::System.Data.DataColumn[] {
                         this.tableПользователи.Код_типа_пользователяColumn}, false);
@@ -5635,23 +5635,23 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ТелефоныRow ТелефоныRow {
-                get {
-                    return ((ТелефоныRow)(this.GetParentRow(this.Table.ParentRelations["Телефоны_Члены_профсоюза"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["Телефоны_Члены_профсоюза"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ДолжностиRow ДолжностиRow {
                 get {
                     return ((ДолжностиRow)(this.GetParentRow(this.Table.ParentRelations["FK_Члены_профсоюза_Должности1"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Члены_профсоюза_Должности1"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public ТелефоныRow ТелефоныRow {
+                get {
+                    return ((ТелефоныRow)(this.GetParentRow(this.Table.ParentRelations["Телефоны_Члены_профсоюза"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["Телефоны_Члены_профсоюза"]);
                 }
             }
             
@@ -6032,12 +6032,12 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Типы_заявленийRow Типы_заявленийRow {
+            public Материальная_выплатаRow Материальная_выплатаRow {
                 get {
-                    return ((Типы_заявленийRow)(this.GetParentRow(this.Table.ParentRelations["FK_Заявления_Типы_заявлений"])));
+                    return ((Материальная_выплатаRow)(this.GetParentRow(this.Table.ParentRelations["FK_Заявления_Материальная_выплата"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Заявления_Типы_заявлений"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Заявления_Материальная_выплата"]);
                 }
             }
             
@@ -6054,12 +6054,12 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Материальная_выплатаRow Материальная_выплатаRow {
+            public Типы_заявленийRow Типы_заявленийRow {
                 get {
-                    return ((Материальная_выплатаRow)(this.GetParentRow(this.Table.ParentRelations["FK_Заявления_Материальная_выплата"])));
+                    return ((Типы_заявленийRow)(this.GetParentRow(this.Table.ParentRelations["FK_Заявления_Типы_заявлений"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_Заявления_Материальная_выплата"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_Заявления_Типы_заявлений"]);
                 }
             }
             
@@ -6242,23 +6242,23 @@ namespace Профсоюзная_база {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Члены_профсоюзаRow Члены_профсоюзаRow {
-                get {
-                    return ((Члены_профсоюзаRow)(this.GetParentRow(this.Table.ParentRelations["FK_ОО_ЧП_Члены_профсоюза"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK_ОО_ЧП_Члены_профсоюза"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Общественные_организацииRow Общественные_организацииRow {
                 get {
                     return ((Общественные_организацииRow)(this.GetParentRow(this.Table.ParentRelations["FK_ОО_ЧП_Общественные_организации"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_ОО_ЧП_Общественные_организации"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public Члены_профсоюзаRow Члены_профсоюзаRow {
+                get {
+                    return ((Члены_профсоюзаRow)(this.GetParentRow(this.Table.ParentRelations["FK_ОО_ЧП_Члены_профсоюза"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK_ОО_ЧП_Члены_профсоюза"]);
                 }
             }
         }

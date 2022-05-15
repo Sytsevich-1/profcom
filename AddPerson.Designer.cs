@@ -30,6 +30,7 @@ namespace Профсоюзная_база
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddPerson));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
@@ -82,7 +83,7 @@ namespace Профсоюзная_база
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(320, 296);
+            this.panel1.Size = new System.Drawing.Size(320, 293);
             this.panel1.TabIndex = 0;
             // 
             // label8
@@ -151,7 +152,7 @@ namespace Профсоюзная_база
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(176, 20);
             this.dateTimePicker1.TabIndex = 26;
-            this.dateTimePicker1.Value = new System.DateTime(2022, 5, 11, 0, 0, 0, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2022, 5, 15, 0, 0, 0, 0);
             // 
             // label4
             // 
@@ -277,8 +278,9 @@ namespace Профсоюзная_база
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(320, 296);
+            this.ClientSize = new System.Drawing.Size(320, 293);
             this.Controls.Add(this.panel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddPerson";
             this.Text = "Добавить сотрудника";
             this.Load += new System.EventHandler(this.AddPerson_Load);

@@ -44,15 +44,30 @@ namespace Профсоюзная_база
             con.Open();
             if (con.State == System.Data.ConnectionState.Open)
             {
-                SqlCommand personadd = new SqlCommand(
-                    $"INSERT INTO [Члены_профсоюза] (Фамилия, Имя, Отчество, Дата_рождения, Код_пола, Код_должности) VALUES (N'{textBox1.Text}', N'{textBox2.Text}', N'{textBox3.Text}', N'{dateTimePicker1.Value}', N'{comboBox1.SelectedValue}', N'{comboBox2.SelectedValue}')", con);
+                String script = "AddPrson";
+                con = new SqlConnection(conString);
+                con.Open();
+                SqlCommand personadd = new SqlCommand(script, con);
+                personadd.CommandType = System.Data.CommandType.StoredProcedure;
+                personadd.Parameters.AddWithValue("@Фамилия", textBox1.Text);
+                personadd.Parameters.AddWithValue("@Имя", textBox2.Text);
+                personadd.Parameters.AddWithValue("@Отчество", textBox3.Text);
+                personadd.Parameters.AddWithValue("@Дата_рождения", Convert.ToDateTime(dateTimePicker1.Text));
+                personadd.Parameters.AddWithValue("@Код_пола", comboBox1.SelectedValue);
+                personadd.Parameters.AddWithValue("@Код_должности", comboBox2.SelectedValue);
+                personadd.Parameters.AddWithValue("@Номер_телефона", textBox4.Text);
+                personadd.ExecuteNonQuery();
+                con.Close();
+                /*SqlCommand personadd = new SqlCommand(
+                    $"INSERT INTO [Члены_профсоюза] (Фамилия, Имя, Отчество, Дата_рождения, Код_пола, Код_должности) VALUES (N'{textBox1.Text}', N'{textBox2.Text}', N'{textBox3.Text}', '@Birthdate', N'{comboBox1.SelectedValue}', N'{comboBox2.SelectedValue}')", con);
+                personadd.Parameters.Add("@Birthdate", SqlDbType.Date).Value = dateTimePicker1.Value.Date;
                 SqlCommand query = new SqlCommand("SELECT SCOPE_IDENTITY()", con);
                 personadd.ExecuteNonQuery();
                 int a = Convert.ToInt16(query.ExecuteScalar());
                 SqlCommand phoneadd = new SqlCommand(
                     $"INSERT INTO [Телефоны] (Код_ЧП, Номер_телефона) VALUES (N'{a}', N'{textBox4.Text}')", con);
-                phoneadd.ExecuteNonQuery();
-                }
+                phoneadd.ExecuteNonQuery();*/
+            }
             con.Close();
 
                 Person main = new Person();

@@ -255,6 +255,7 @@ namespace Профсоюзная_база
             this.ClientSize = new System.Drawing.Size(329, 323);
             this.Controls.Add(this.должностиDataGridView);
             this.Controls.Add(this.должностиBindingNavigator);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Positions";
             this.Text = "Должности";
             this.Load += new System.EventHandler(this.Positions_Load);

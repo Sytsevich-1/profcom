@@ -25,9 +25,11 @@ namespace Профсоюзная_база
 
         public void load()
         {
-            string script = "SELECT Члены_профсоюза.Код_ЧП, Члены_профсоюза.Фамилия, Члены_профсоюза.Имя, Члены_профсоюза.Отчество, Члены_профсоюза.Дата_рождения, Гендер.Пол, Должности.Должность," +
+
+            /*string script = "SELECT Члены_профсоюза.Код_ЧП, Члены_профсоюза.Фамилия, Члены_профсоюза.Имя, Члены_профсоюза.Отчество, Члены_профсоюза.Дата_рождения, Гендер.Пол, Должности.Должность," +
                          "Телефоны.Номер_телефона FROM Гендер INNER JOIN Члены_профсоюза ON Гендер.Код_пола = Члены_профсоюза.Код_пола INNER JOIN Должности ON Члены_профсоюза.Код_должности = Должности.Код_должности INNER JOIN " +
-                         "Телефоны ON Члены_профсоюза.Код_ЧП = Телефоны.Код_ЧП";
+                         "Телефоны ON Члены_профсоюза.Код_ЧП = Телефоны.Код_ЧП";*/ 
+            string script = "Person";
             con = new SqlConnection(conString);
             con.Open();
             SqlDataAdapter ms_data = new SqlDataAdapter(script, conString);
@@ -43,14 +45,17 @@ namespace Профсоюзная_база
             {
                 if (MessageBox.Show("Вы действительно хотите удалить запись? Это действие нельзя отменить", "Удаление записи", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                    int id = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
                     con.Open();
-                    SqlCommand del = new SqlCommand(@"DELETE FROM Члены_профсоюза WHERE Код_ЧП = @id", con);
-                    del.Parameters.AddWithValue("id", id);
+                    //SqlCommand del = new SqlCommand(@"DELETE FROM Члены_профсоюза WHERE Код_ЧП = @id", con);
+                    SqlCommand del = new SqlCommand("DelPerson", con);
+                    del.CommandType = System.Data.CommandType.StoredProcedure;
+                    del.Parameters.AddWithValue("@id", id);
                     del.ExecuteNonQuery();
                     con.Close();
                     MessageBox.Show("Запись была успешно удалена из базы данных", "Удаление записи", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                else load();
             }
             else
             {
@@ -66,6 +71,7 @@ namespace Профсоюзная_база
         public void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
             del();
+            load();
         }
 
         private void toolStripAdd_Click(object sender, EventArgs e)
@@ -135,9 +141,7 @@ namespace Профсоюзная_база
 
         private void общественныеОрганизацииToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Public_org af = new Public_org();
-            af.Owner = this;
-            af.Show();
+            
         }
 
         private void типыЗаявленийToolStripMenuItem_Click(object sender, EventArgs e)
@@ -166,6 +170,23 @@ namespace Профсоюзная_база
             Restore af = new Restore();
             af.Owner = this;
             af.Show();
+        }
+
+        private void выходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void редактироватьОрганизацииToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Public_org af = new Public_org();
+            af.Owner = this;
+            af.Show();
+        }
+
+        private void сотрудникВОрганизацииToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

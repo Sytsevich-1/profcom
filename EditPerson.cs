@@ -58,7 +58,7 @@ namespace Профсоюзная_база
                 personadd.Parameters.AddWithValue("@Фамилия", textBox1.Text);
                 personadd.Parameters.AddWithValue("@Имя", textBox2.Text);
                 personadd.Parameters.AddWithValue("@Отчество", textBox3.Text);
-                personadd.Parameters.AddWithValue("@Датарождения", dateTimePicker1.Value);
+                personadd.Parameters.AddWithValue("@Датарождения", Convert.ToDateTime(dateTimePicker1.Text));
                 personadd.Parameters.AddWithValue("@Кодпола", comboBox1.SelectedValue);
                 personadd.Parameters.AddWithValue("@Коддолжности", comboBox2.SelectedValue);
                 personadd.Parameters.AddWithValue("@Id", Person.GridValues.Col0);

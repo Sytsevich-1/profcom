@@ -16,6 +16,7 @@ namespace Профсоюзная_база
         public Child()
         {
             InitializeComponent();
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
         public SqlConnection con;
         public SqlCommand com;
@@ -23,9 +24,10 @@ namespace Профсоюзная_база
 
         public void load()
         {
-            string script = "SELECT Члены_профсоюза.Код_ЧП, Члены_профсоюза.Фамилия, Члены_профсоюза.Имя, Члены_профсоюза.Отчество, Дети.Фамилия AS Expr1, Дети.Имя AS Expr2, Дети.Отчество AS Expr3, Дети.Дата_рождения,"+
+            /*string script = "SELECT Члены_профсоюза.Код_ЧП, Члены_профсоюза.Фамилия, Члены_профсоюза.Имя, Члены_профсоюза.Отчество, Дети.Фамилия AS Expr1, Дети.Имя AS Expr2, Дети.Отчество AS Expr3, Дети.Дата_рождения,"+
                          "Гендер.Пол FROM Гендер INNER JOIN Дети ON Гендер.Код_пола = Дети.Код_пола INNER JOIN Члены_профсоюза ON Гендер.Код_пола = Члены_профсоюза.Код_пола INNER JOIN "+
-                         "Дети_родители ON Дети.Код_дети = Дети_родители.Код_дети AND Члены_профсоюза.Код_ЧП = Дети_родители.Код_ЧП";
+                         "Детcи_родители ON Дети.Код_дети = Дети_родители.Код_дети AND Члены_профсоюза.Код_ЧП = Дети_родители.Код_ЧП";*/
+            string script = "Child";
             con = new SqlConnection(conString);
             con.Open();
             SqlDataAdapter ms_data = new SqlDataAdapter(script, conString);
@@ -47,12 +49,16 @@ namespace Профсоюзная_база
             {
                 if (MessageBox.Show("Вы действительно хотите удалить запись? Это действие нельзя отменить", "Удаление записи", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    string id = dataGridView1.SelectedRows[0].Cells[0].Value.ToString();
+                    int id = int.Parse(dataGridView1.SelectedRows[0].Cells[0].Value.ToString());
                     con.Open();
-                    SqlCommand del = new SqlCommand(@"DELETE FROM Члены_профсоюза WHERE Код_ЧП = @id", con);
-                    del.Parameters.AddWithValue("id", id);
+                    //SqlCommand del = new SqlCommand(@"DELETE FROM Члены_профсоюза WHERE Код_ЧП = @id", con);
+                    SqlCommand del = new SqlCommand("DelChild", con);
+                    del.CommandType = System.Data.CommandType.StoredProcedure;
+                    del.Parameters.AddWithValue("@id", id);
                     del.ExecuteNonQuery();
                     con.Close();
+                    
+                    //SqlCommand del = new SqlCommand(@"DELETE FROM Дети WHERE Код_дети = @id", con);
                     MessageBox.Show("Запись была успешно удалена из базы данных", "Удаление записи", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -73,9 +79,9 @@ namespace Профсоюзная_база
 
         private void toolStripAdd_Click(object sender, EventArgs e)
         {
-            //AddChild af = new AddChild();
-            //af.Owner = this;
-            //af.Show();
+            AddChild af = new AddChild();
+            af.Owner = this;
+            af.Show();
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)

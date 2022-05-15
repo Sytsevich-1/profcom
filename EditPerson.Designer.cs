@@ -30,6 +30,7 @@ namespace Профсоюзная_база
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditPerson));
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -130,7 +131,7 @@ namespace Профсоюзная_база
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(176, 20);
             this.dateTimePicker1.TabIndex = 45;
-            this.dateTimePicker1.Value = new System.DateTime(2022, 5, 11, 0, 0, 0, 0);
+            this.dateTimePicker1.Value = new System.DateTime(2022, 5, 15, 13, 58, 0, 0);
             // 
             // label4
             // 
@@ -238,6 +239,7 @@ namespace Профсоюзная_база
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditPerson";
             this.Text = "Редактировать данные о сотруднике";
             this.Load += new System.EventHandler(this.EditPerson_Load);
